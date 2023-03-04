@@ -31,12 +31,10 @@
 
     object Modules{
         const val App = ":app"
-        const val Core = ":core"
-        const val Remote = ":data:remote"
-        const val Local = ":data:local"
-        const val Repository = ":data:repository"
+        const val Common = ":common"
         const val Domain = ":domain"
-        const val Model = ":data:model"
+        const val Data = ":data"
+        const val Feature = ":feature"
     }
 
     object Versions {

@@ -1,6 +1,9 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id(BuildPlugins.androidApplication)
+    id(BuildPlugins.kotlinJetBrains)
+    id(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.kotlinKapt)
+    id(BuildPlugins.DaggerHiltPlugin)
 }
 
 android {
@@ -8,11 +11,11 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        minSdk = 24
-        targetSdk = 33
+        minSdk = AndroidSDK.min
+        targetSdk = AndroidSDK.target
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -41,4 +44,11 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    kapt(Libraries.daggerHiltCompiler)
+    api(Libraries.daggerHilt)
+
+
+
+
 }
