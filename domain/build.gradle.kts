@@ -47,7 +47,8 @@ dependencies {
 
     kapt(Libraries.daggerHiltCompiler)
     api(Libraries.daggerHilt)
-
+    implementation(project(Modules.Common))
+    implementation(project(Modules.Data))
 
 
 
