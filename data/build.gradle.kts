@@ -1,5 +1,5 @@
 plugins {
-    id(BuildPlugins.androidApplication)
+    id(BuildPlugins.AndroidLibrary)
     id(BuildPlugins.kotlinJetBrains)
     id(BuildPlugins.kotlinAndroid)
     id(BuildPlugins.kotlinKapt)
@@ -46,6 +46,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation(project(Modules.Common))
+
     kapt(Libraries.daggerHiltCompiler)
     api(Libraries.daggerHilt)
     api(Libraries.retrofit)

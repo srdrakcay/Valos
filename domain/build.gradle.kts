@@ -1,5 +1,5 @@
 plugins {
-    id(BuildPlugins.androidApplication)
+    id(BuildPlugins.AndroidLibrary)
     id(BuildPlugins.kotlinJetBrains)
     id(BuildPlugins.kotlinAndroid)
     id(BuildPlugins.kotlinKapt)

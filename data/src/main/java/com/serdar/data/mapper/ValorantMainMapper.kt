@@ -1,6 +1,7 @@
-package com.serdar.common.mapper
+package com.serdar.data.mapper
 
 import com.serdar.common.entity.ValorantEntity
+import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.dto.Data
 import javax.inject.Inject
 

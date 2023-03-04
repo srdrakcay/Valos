@@ -25,7 +25,7 @@
     object AndroidSDK{
         //minimum, compile and target SDK versions
         const val min = 21
-        const val compile = 32
+        const val compile = 33
         const val target = compile
     }
 
@@ -35,6 +35,7 @@
         const val Domain = ":domain"
         const val Data = ":data"
         const val Feature = ":feature"
+        const val Navigation = ":navigation"
     }
 
     object Versions {
@@ -65,7 +66,7 @@
         val mockk = "1.9.2"
         val fragmentTest = "1.1.0-alpha06"
         val databinding = "3.3.2"
-        val hilt = "2.41"
+        val hilt = "2.44"
         val okHttp = "4.7.2"
         val sandwich = "1.2.4"
         val activityExt = "1.2.3"

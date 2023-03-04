@@ -61,4 +61,6 @@ dependencies {
     api(AndroidLibraries.lifeCycleViewModel)
     api(AndroidLibraries.lifecycleViewModelExt)
     api(AndroidLibraries.lifecycleRuntime)
+    implementation(project(Modules.Feature))
+
 }
