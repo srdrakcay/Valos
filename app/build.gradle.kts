@@ -33,6 +33,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    sourceSets {
+        getByName("debug").res.srcDirs("$rootDir/navigation/src/main/sharedRes")
+    }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
