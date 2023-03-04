@@ -1,4 +1,4 @@
-package com.serdar.data.mapper
+package com.serdar.common.mapper
 
 import com.serdar.common.entity.ValorantEntity
 import com.serdar.data.dto.Data

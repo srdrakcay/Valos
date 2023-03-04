@@ -1,10 +1,10 @@
 package com.serdar.data.repository
 
 import com.serdar.common.entity.ValorantEntity
+import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.NetworkResponseState
 import com.serdar.data.di.coroutine.IoDispatcher
 import com.serdar.data.dto.Data
-import com.serdar.data.mapper.ValorantListMapper
 import com.serdar.data.source.remote.RemoteDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

@@ -1,9 +1,9 @@
-package com.serdar.data.di.mapper
+package com.serdar.common.mapper.di
 
 import com.serdar.common.entity.ValorantEntity
+import com.serdar.common.mapper.ValorantListMapper
+import com.serdar.common.mapper.ValorantMainMapper
 import com.serdar.data.dto.Data
-import com.serdar.data.mapper.ValorantMainMapper
-import com.serdar.data.mapper.ValorantListMapper
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
