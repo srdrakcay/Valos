@@ -121,6 +121,7 @@
         val navigation = "androidx.navigation:navigation-ui-ktx:${Versions.nav}"
         val navigationFrag = "androidx.navigation:navigation-fragment-ktx:${Versions.nav}"
         val activityExt ="androidx.activity:activity-ktx:${Versions.activityExt}"
+        val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 
     }
 
