@@ -24,7 +24,8 @@ class HomeAdapter(private val homeUiData: List<HomeUiData>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = homeUiData[position]
-        holder.viewDataBinding.imageView.loadUrl(data.fullPortrait)
+        holder.viewDataBinding.imageView.loadUrl(data.killfeedPortrait)
+        holder.viewDataBinding.textView.text=homeUiData[0].displayName
     }
 
     override fun getItemCount(): Int {

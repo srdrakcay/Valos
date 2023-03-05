@@ -19,11 +19,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val data = mutableListOf<HomeUiData>()
         HomeAdapter(data)
     }
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        uiState()
     }
 
     private fun uiState(){
