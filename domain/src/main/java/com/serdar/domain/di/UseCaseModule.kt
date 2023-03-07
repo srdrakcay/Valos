@@ -2,6 +2,8 @@ package com.serdar.domain.di
 
 import com.serdar.domain.usecase.getagentsusecase.GetAgentsUseCase
 import com.serdar.domain.usecase.getagentsusecase.GetAgentsUseCaseImpl
+import com.serdar.domain.usecase.getweaponsusecase.GetWeaponsUseCase
+import com.serdar.domain.usecase.getweaponsusecase.GetWeaponsUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -18,5 +20,7 @@ abstract class UseCaseModule {
     abstract fun bindGetAgentsUseCas(getAgentsUseCaseImpl: GetAgentsUseCaseImpl): GetAgentsUseCase
 
 
-
+    @Binds
+    @ViewModelScoped
+    abstract fun bindGetWeaponsUseCas(getWeaponsUseCaseImpl: GetWeaponsUseCaseImpl): GetWeaponsUseCase
 }

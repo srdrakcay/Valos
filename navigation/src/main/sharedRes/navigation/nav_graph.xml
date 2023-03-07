@@ -6,7 +6,7 @@
     app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/agentsFragment"
-        android:name="com.serdar.presentation.home.AgentsFragment"
+        android:name="com.serdar.presentation.agents.AgentsFragment"
         android:label="HomeFragment" />
     <fragment
         android:id="@+id/splashFragment"
@@ -16,5 +16,9 @@
             android:id="@+id/actionToHome"
             app:destination="@id/agentsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/weaponsFragment"
+        android:name="com.serdar.presentation.weapons.WeaponsFragment"
+        android:label="WeaponsFragment" />
 
 </navigation>

@@ -1,4 +1,4 @@
-package com.serdar.presentation.home
+package com.serdar.presentation.agents
 
 import androidx.annotation.StringRes
 

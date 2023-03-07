@@ -1,4 +1,4 @@
-package com.serdar.presentation.home
+package com.serdar.presentation.agents
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -24,9 +24,9 @@ class AgentsViewModel  @Inject constructor(
     val valorantHomeUiState: LiveData<AgentsUiState> get() = _valorantHomeUiState
 
     init {
-        getWeapons()
+        getAgents()
     }
-    private fun getWeapons() {
+    private fun getAgents() {
         viewModelScope.launch {
             getAgentsUseCase().collectLatest{
                 when (it) {

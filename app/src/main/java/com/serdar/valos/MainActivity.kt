@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.agentsFragment -> bottomNavigation.show()
+                R.id.weaponsFragment->bottomNavigation.show()
                 else -> bottomNavigation.notShow()
             }
         }

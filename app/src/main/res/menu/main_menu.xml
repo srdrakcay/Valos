@@ -3,4 +3,6 @@
 
     <item android:title="Agents"
         android:id="@+id/agentsFragment"/>
+    <item android:title="Weapons"
+        android:id="@+id/weaponsFragment"/>
 </menu>

@@ -1,4 +1,4 @@
-package com.serdar.presentation.home
+package com.serdar.presentation.agents
 
 import com.serdar.common.entity.ValorantAgentsEntity
 import com.serdar.common.mapper.ValorantListMapper

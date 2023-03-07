@@ -1,4 +1,4 @@
-package com.serdar.presentation.home
+package com.serdar.presentation.agents
 
 import android.os.Bundle
 import android.view.View
@@ -6,13 +6,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.serdar.common.binding.viewBinding
 import com.serdar.presentation.R
-import com.serdar.presentation.databinding.FragmentHomeBinding
+import com.serdar.presentation.databinding.FragmentAgentsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AgentsFragment : Fragment(R.layout.fragment_home) {
+class AgentsFragment : Fragment(R.layout.fragment_agents) {
     private val viewModel: AgentsViewModel by viewModels()
-    private val binding by viewBinding(FragmentHomeBinding::bind)
+    private val binding by viewBinding(FragmentAgentsBinding::bind)
     private val agentsAdapter by lazy {
         AgentsAdapter(emptyList())
     }
