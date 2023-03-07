@@ -1,16 +1,16 @@
 package com.serdar.data.mapper
 
-import com.serdar.common.entity.ValorantEntity
+import com.serdar.common.entity.ValorantAgentsEntity
 import com.serdar.common.mapper.ValorantListMapper
-import com.serdar.data.dto.Data
+import com.serdar.data.dto.agents.Data
 import javax.inject.Inject
 
 
-class ValorantMainMapper @Inject constructor() :
-    ValorantListMapper<Data, ValorantEntity> {
-    override fun map(input: List<Data>?): List<ValorantEntity> {
+class ValorantAgentsMainMapper @Inject constructor() :
+    ValorantListMapper<Data, ValorantAgentsEntity> {
+    override fun map(input: List<Data>?): List<ValorantAgentsEntity> {
         return input?.map {
-            ValorantEntity(
+            ValorantAgentsEntity(
                 displayName = it.displayName,
                 fullPortrait = it.fullPortrait,
                 fullPortraitV2 = it.fullPortraitV2,

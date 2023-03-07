@@ -1,6 +1,6 @@
 package com.serdar.presentation.home
 
-data class HomeUiData(
+data class AgentsUiData(
     val displayName: String?,
     val fullPortrait: String?,
     val killfeedPortrait: String?,

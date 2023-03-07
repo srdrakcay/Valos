@@ -2,9 +2,10 @@
     <!-- Base application theme. -->
     <style name="Theme.Valos" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
+        <!-- Remove the white screen before splash. -->
         <item name="android:windowSplashScreenAnimatedIcon">@android:color/transparent</item>
-
         <item name="android:windowSplashScreenAnimationDuration">0</item>
+        <item name="android:windowDisablePreview">true</item>
         <item name="colorPrimary">#151C23</item>
         <item name="colorPrimaryVariant">#151C23</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -14,6 +15,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowDisablePreview">true</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

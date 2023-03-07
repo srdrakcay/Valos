@@ -7,16 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.serdar.common.extension.loadUrl
 import com.serdar.presentation.databinding.AgentItemBinding
 
-class HomeAdapter(private var homeUiData: List<HomeUiData>) :
-    RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
+class AgentsAdapter(private var agentsUiData: List<AgentsUiData>) :
+    RecyclerView.Adapter<AgentsAdapter.MyViewHolder>() {
 
 
     inner class MyViewHolder(private val viewBinding: AgentItemBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
 
-        fun bindItems(homeUiData: HomeUiData) {
-            viewBinding.imageView.loadUrl(homeUiData.fullPortrait)
-            viewBinding.textView.text = homeUiData.displayName
+        fun bindItems(agentsUiData: AgentsUiData) {
+            viewBinding.imageView.loadUrl(agentsUiData.fullPortrait)
+            viewBinding.textView.text = agentsUiData.displayName
         }
     }
 
@@ -29,17 +29,17 @@ class HomeAdapter(private var homeUiData: List<HomeUiData>) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bindItems(homeUiData[position])
+        holder.bindItems(agentsUiData[position])
 
     }
 
     override fun getItemCount(): Int {
-        return homeUiData.size
+        return agentsUiData.size
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateData(homeUiData: List<HomeUiData>) {
-        this.homeUiData = homeUiData
+    fun updateData(agentsUiData: List<AgentsUiData>) {
+        this.agentsUiData = agentsUiData
         notifyDataSetChanged()
 
     }

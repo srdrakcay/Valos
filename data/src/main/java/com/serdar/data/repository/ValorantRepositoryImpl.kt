@@ -1,10 +1,11 @@
 package com.serdar.data.repository
 
-import com.serdar.common.entity.ValorantEntity
+import com.serdar.common.entity.ValorantAgentsEntity
+import com.serdar.common.entity.ValorantWeaponsEntity
 import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.NetworkResponseState
 import com.serdar.data.di.coroutine.IoDispatcher
-import com.serdar.data.dto.Data
+import com.serdar.data.dto.agents.Data
 import com.serdar.data.source.remote.RemoteDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -15,11 +16,12 @@ import javax.inject.Inject
 
 class ValorantRepositoryImpl @Inject constructor(
     private val bindGetAgentsRemoteSource: RemoteDataSource,
-    private val valorantMapperA: ValorantListMapper<Data, ValorantEntity>,
+    private val valorantMapperA: ValorantListMapper<Data, ValorantAgentsEntity>,
+    private val valorantMapperW: ValorantListMapper<com.serdar.data.dto.weapons.Data, ValorantWeaponsEntity>,
     @IoDispatcher
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ValorantRepository {
-    override suspend fun getAgents(): Flow<NetworkResponseState<List<ValorantEntity>>> {
+    override suspend fun getAgents(): Flow<NetworkResponseState<List<ValorantAgentsEntity>>> {
         return flow {
             emit(NetworkResponseState.Loading)
             when (val response = bindGetAgentsRemoteSource.getAgents()) {
@@ -32,5 +34,20 @@ class ValorantRepositoryImpl @Inject constructor(
                 else -> {}
             }
         }.flowOn(ioDispatcher)
+    }
+
+    override suspend fun getWeapons(): Flow<NetworkResponseState<List<ValorantWeaponsEntity>>> {
+        return flow {
+            emit(NetworkResponseState.Loading)
+            when (val response = bindGetAgentsRemoteSource.getWeapons()) {
+                is NetworkResponseState.Error -> {
+                    emit(NetworkResponseState.Error(response.exception))
+                }
+                is NetworkResponseState.Success -> {
+                    emit(NetworkResponseState.Success(valorantMapperW.map(response.result)))
+                }
+                else -> {}
+            }
+        }
     }
 }

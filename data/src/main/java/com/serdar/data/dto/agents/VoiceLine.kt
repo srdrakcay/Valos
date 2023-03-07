@@ -1,6 +1,4 @@
-package com.serdar.data.dto
-
-import com.serdar.data.dto.Media
+package com.serdar.data.dto.agents
 
 
 data class VoiceLine(

@@ -1,4 +1,4 @@
-package com.serdar.data.dto
+package com.serdar.data.dto.agents
 
 
 data class Data(

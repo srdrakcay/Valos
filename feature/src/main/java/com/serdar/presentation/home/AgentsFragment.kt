@@ -10,11 +10,11 @@ import com.serdar.presentation.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(R.layout.fragment_home) {
-    private val viewModel: HomeViewModel by viewModels()
+class AgentsFragment : Fragment(R.layout.fragment_home) {
+    private val viewModel: AgentsViewModel by viewModels()
     private val binding by viewBinding(FragmentHomeBinding::bind)
-    private val homeAdapter by lazy {
-        HomeAdapter(emptyList())
+    private val agentsAdapter by lazy {
+        AgentsAdapter(emptyList())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -25,18 +25,18 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun uiState() {
         viewModel.valorantHomeUiState.observe(viewLifecycleOwner) {
             when (it) {
-                is HomeUiState.Loading -> {
+                is AgentsUiState.Loading -> {
                     //do something
 
                     println("data Loading")
                 }
-                is HomeUiState.Error -> {
+                is AgentsUiState.Error -> {
                     //do something
                     println("data error")
                 }
-                is HomeUiState.Success -> {
-                    binding.rcView.adapter = homeAdapter
-                    homeAdapter.updateData(it.data)
+                is AgentsUiState.Success -> {
+                    binding.rcView.adapter = agentsAdapter
+                    agentsAdapter.updateData(it.data)
                 }
             }
         }

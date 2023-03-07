@@ -1,6 +1,6 @@
 package com.serdar.common.entity
 
-data class ValorantEntity(
+data class ValorantAgentsEntity(
     val displayName: String?,
     val fullPortrait: String?,
     val fullPortraitV2: String?,
