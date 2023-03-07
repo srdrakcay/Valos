@@ -1,10 +1,8 @@
 package com.serdar.presentation.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.serdar.common.binding.viewBinding
 import com.serdar.presentation.R
@@ -13,11 +11,10 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
-    private val viewModel:HomeViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels()
     private val binding by viewBinding(FragmentHomeBinding::bind)
     private val homeAdapter by lazy {
-        val data = mutableListOf<HomeUiData>()
-        HomeAdapter(data)
+        HomeAdapter(emptyList())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -25,8 +22,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         uiState()
     }
 
-    private fun uiState(){
-        viewModel.valorantHomeUiState.observe(viewLifecycleOwner){
+    private fun uiState() {
+        viewModel.valorantHomeUiState.observe(viewLifecycleOwner) {
             when (it) {
                 is HomeUiState.Loading -> {
                     //do something
@@ -38,7 +35,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     println("data error")
                 }
                 is HomeUiState.Success -> {
-                    binding.rcView.adapter=homeAdapter
+                    binding.rcView.adapter = homeAdapter
                     homeAdapter.updateData(it.data)
                 }
             }

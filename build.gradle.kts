@@ -6,4 +6,5 @@ plugins {
     id (BuildPlugins.kotlinJvm)  version "1.7.20" apply false
     id(BuildPlugins.Hilt) version "2.44" apply false
 
+
 }

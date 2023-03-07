@@ -54,9 +54,12 @@ dependencies {
 
 
     api(AndroidLibraries.navigationFrag)
+    api(AndroidLibraries.navigation)
     implementation(project(Modules.Common))
     implementation(project(Modules.Data))
     implementation(project(Modules.Domain))
+    implementation(project(Modules.Navigation))
+
     kapt(Libraries.daggerHiltCompiler)
     api(Libraries.daggerHilt)
 

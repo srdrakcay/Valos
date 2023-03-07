@@ -1,12 +1,12 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
     <style name="Theme.Valos" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="android:windowSplashScreenAnimatedIcon">@android:color/transparent</item>
-
         <item name="android:windowSplashScreenAnimationDuration">0</item>
-        <item name="colorPrimary">#151C23</item>
-        <item name="colorPrimaryVariant">#151C23</item>
+        <item name="colorPrimary">#ff5252</item>
+        <item name="colorPrimaryVariant">#ff5252</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

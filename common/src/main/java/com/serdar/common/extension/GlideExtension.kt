@@ -8,4 +8,5 @@ fun ImageView.loadUrl(url: String?){
         .with(this)
         .load(url)
         .into(this)
+
 }
