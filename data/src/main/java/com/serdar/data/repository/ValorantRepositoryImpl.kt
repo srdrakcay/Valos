@@ -7,16 +7,20 @@ import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.NetworkResponseState
 import com.serdar.data.di.coroutine.IoDispatcher
 import com.serdar.data.dto.agents.Data
+import com.serdar.data.dto.favorite.FavoritesDataModel
+import com.serdar.data.source.local.LocalDataSource
 import com.serdar.data.source.remote.RemoteDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class ValorantRepositoryImpl @Inject constructor(
     private val bindGetAgentsRemoteSource: RemoteDataSource,
+    private val localDataSource: LocalDataSource,
     private val valorantMapperA: ValorantListMapper<Data, ValorantAgentsEntity>,
     private val valorantMapperW: ValorantListMapper<com.serdar.data.dto.weapons.Data, ValorantWeaponsEntity>,
     private val valorantMapperM: ValorantListMapper<com.serdar.data.dto.maps.Data, ValorantMapsEntity>,
@@ -66,5 +70,38 @@ class ValorantRepositoryImpl @Inject constructor(
                 else -> {}
             }
         }.flowOn(ioDispatcher)
+    }
+
+    override fun readAllProduct(): Flow<List<FavoritesDataModel>> =
+        localDataSource.readAllProduct()
+
+    override suspend fun addValorantItem(item: FavoritesDataModel) {
+        withContext(ioDispatcher) {
+            try {
+                localDataSource.addValorantItem(item)
+            } catch (e: Exception) {
+                println("Error")
+            }
+        }
+    }
+
+    override suspend fun deleteValorantItem(item: FavoritesDataModel) {
+        withContext(ioDispatcher) {
+            try {
+                localDataSource.deleteValorantItem(item)
+            } catch (e: Exception) {
+                println("Error")
+            }
+        }
+    }
+
+    override suspend fun deleteAllValorantItem() {
+        withContext(ioDispatcher) {
+            try {
+                localDataSource.deleteAllValorantItem()
+            } catch (e: Exception) {
+                println("Error")
+            }
+        }
     }
 }

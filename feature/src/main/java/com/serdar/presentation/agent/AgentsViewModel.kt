@@ -7,6 +7,8 @@ import androidx.lifecycle.viewModelScope
 import com.serdar.common.entity.ValorantAgentsEntity
 import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.NetworkResponseState
+import com.serdar.data.dto.favorite.FavoritesDataModel
+import com.serdar.domain.usecase.additemusecase.AddItemFavoriteUseCase
 import com.serdar.domain.usecase.getagentsusecase.GetAgentsUseCase
 import com.serdar.presentation.R
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,6 +19,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AgentsViewModel  @Inject constructor(
     private val getAgentsUseCase: GetAgentsUseCase,
+    private val addItemFavoriteUseCase: AddItemFavoriteUseCase,
     private val valorantUiMapper: ValorantListMapper<ValorantAgentsEntity, AgentsUiData>
 ) : ViewModel() {
 
@@ -26,9 +29,10 @@ class AgentsViewModel  @Inject constructor(
     init {
         getAgents()
     }
+
     private fun getAgents() {
         viewModelScope.launch {
-            getAgentsUseCase().collectLatest{
+            getAgentsUseCase().collectLatest {
                 when (it) {
                     is NetworkResponseState.Error -> {
                         _valorantHomeUiState.postValue(AgentsUiState.Error(R.string.error))
@@ -42,5 +46,12 @@ class AgentsViewModel  @Inject constructor(
                 }
             }
         }
+    }
+
+    fun addFavoriteItem(item: FavoritesDataModel) {
+        viewModelScope.launch {
+            addItemFavoriteUseCase(item)
+        }
+
     }
 }
