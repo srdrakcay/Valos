@@ -1,4 +1,4 @@
-package com.serdar.presentation.agents
+package com.serdar.presentation.map
 
 import android.os.Bundle
 import android.view.View
@@ -6,15 +6,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.serdar.common.binding.viewBinding
 import com.serdar.presentation.R
-import com.serdar.presentation.databinding.FragmentAgentsBinding
+import com.serdar.presentation.databinding.FragmentMapsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AgentsFragment : Fragment(R.layout.fragment_agents) {
-    private val viewModel: AgentsViewModel by viewModels()
-    private val binding by viewBinding(FragmentAgentsBinding::bind)
-    private val agentsAdapter by lazy {
-        AgentsAdapter(emptyList())
+class MapsFragment : Fragment(R.layout.fragment_maps) {
+    private val viewModel: MapsViewModel by viewModels()
+    private val binding by viewBinding(FragmentMapsBinding::bind)
+    private val mapsAdapter by lazy {
+        MapsAdapter(emptyList())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -23,23 +23,22 @@ class AgentsFragment : Fragment(R.layout.fragment_agents) {
     }
 
     private fun uiState() {
-        viewModel.valorantHomeUiState.observe(viewLifecycleOwner) {
+        viewModel.valorantMapsUiState.observe(viewLifecycleOwner) {
             when (it) {
-                is AgentsUiState.Loading -> {
+                is MapsUiState.Loading -> {
                     //do something
 
                     println("data Loading")
                 }
-                is AgentsUiState.Error -> {
+                is MapsUiState.Error -> {
                     //do something
                     println("data error")
                 }
-                is AgentsUiState.Success -> {
-                    binding.rcView.adapter = agentsAdapter
-                    agentsAdapter.updateData(it.data)
+                is MapsUiState.Success -> {
+                    binding.rcView.adapter = mapsAdapter
+                    mapsAdapter.updateData(it.data)
                 }
             }
         }
     }
 }
-

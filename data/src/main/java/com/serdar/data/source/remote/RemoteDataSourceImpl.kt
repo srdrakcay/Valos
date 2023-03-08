@@ -24,4 +24,12 @@ class RemoteDataSourceImpl @Inject constructor(
             NetworkResponseState.Error(e)
         }
 
+    override suspend fun getMaps(): NetworkResponseState<List<com.serdar.data.dto.maps.Data>> =
+        try {
+            val response = valorantApi.getMaps()
+            NetworkResponseState.Success(response.data)
+        } catch (e: Exception) {
+            NetworkResponseState.Error(e)
+        }
+
 }

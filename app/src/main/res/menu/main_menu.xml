@@ -2,7 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Agents"
-        android:id="@+id/agentsFragment"/>
+        android:id="@+id/agentsFragment"
+        android:icon="@drawable/ic_agents"/>
     <item android:title="Weapons"
-        android:id="@+id/weaponsFragment"/>
+        android:id="@+id/weaponsFragment"
+        android:icon="@drawable/ic_weapons"/>
+    <item android:title="Maps"
+        android:id="@+id/mapsFragment"
+        android:icon="@drawable/ic_maps"/>
+    <item android:title="Favorites"
+        android:id="@+id/favoriteFragment"
+        android:icon="@drawable/ic_favorite"/>
 </menu>

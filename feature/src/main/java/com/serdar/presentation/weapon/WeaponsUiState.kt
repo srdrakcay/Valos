@@ -1,7 +1,6 @@
-package com.serdar.presentation.weapons
+package com.serdar.presentation.weapon
 
 import androidx.annotation.StringRes
-import com.serdar.presentation.agents.AgentsUiData
 
 sealed class WeaponsUiState {
     object Loading : WeaponsUiState()

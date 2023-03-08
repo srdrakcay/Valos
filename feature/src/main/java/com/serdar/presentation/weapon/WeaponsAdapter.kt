@@ -1,4 +1,4 @@
-package com.serdar.presentation.weapons
+package com.serdar.presentation.weapon
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

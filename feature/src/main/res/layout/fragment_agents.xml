@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".agents.AgentsFragment">
+    tools:context=".agent.AgentsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcView"
@@ -20,50 +20,21 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/agent_item" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
+
+    <TextView
+        android:id="@+id/agents"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Agents"
+        android:textAllCaps="true"
+        android:textColor="#ffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/rcView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/agents"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="Agents"
-            android:textStyle="bold"
-            android:textAlignment="viewStart"
-            android:textAllCaps="true"
-            android:textColor="#ffff"
-            android:textSize="20sp" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcView">
-
-        <TextView
-            android:id="@+id/weapons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="WEAPONS"
-            android:textStyle="bold"
-            android:textAlignment="viewStart"
-            android:textAllCaps="true"
-            android:textColor="#ffff"
-            android:textSize="20sp" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

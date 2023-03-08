@@ -1,4 +1,4 @@
-package com.serdar.presentation.weapons
+package com.serdar.presentation.weapon
 
 import com.serdar.common.entity.ValorantWeaponsEntity
 import com.serdar.common.mapper.ValorantListMapper

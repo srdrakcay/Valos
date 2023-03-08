@@ -8,4 +8,6 @@ interface RemoteDataSource {
     suspend fun getAgents(): NetworkResponseState<List<Data>>
 
     suspend fun getWeapons(): NetworkResponseState<List<com.serdar.data.dto.weapons.Data>>
+
+    suspend fun getMaps(): NetworkResponseState<List<com.serdar.data.dto.maps.Data>>
 }

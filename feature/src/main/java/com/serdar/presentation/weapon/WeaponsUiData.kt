@@ -1,4 +1,4 @@
-package com.serdar.presentation.weapons
+package com.serdar.presentation.weapon
 
 data class WeaponsUiData(
     val assetPath: String,

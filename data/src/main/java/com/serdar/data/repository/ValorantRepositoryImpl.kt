@@ -1,6 +1,7 @@
 package com.serdar.data.repository
 
 import com.serdar.common.entity.ValorantAgentsEntity
+import com.serdar.common.entity.ValorantMapsEntity
 import com.serdar.common.entity.ValorantWeaponsEntity
 import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.NetworkResponseState
@@ -18,6 +19,7 @@ class ValorantRepositoryImpl @Inject constructor(
     private val bindGetAgentsRemoteSource: RemoteDataSource,
     private val valorantMapperA: ValorantListMapper<Data, ValorantAgentsEntity>,
     private val valorantMapperW: ValorantListMapper<com.serdar.data.dto.weapons.Data, ValorantWeaponsEntity>,
+    private val valorantMapperM: ValorantListMapper<com.serdar.data.dto.maps.Data, ValorantMapsEntity>,
     @IoDispatcher
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ValorantRepository {
@@ -48,6 +50,21 @@ class ValorantRepositoryImpl @Inject constructor(
                 }
                 else -> {}
             }
-        }
+        }.flowOn(ioDispatcher)
+    }
+
+    override suspend fun getMaps(): Flow<NetworkResponseState<List<ValorantMapsEntity>>> {
+        return flow {
+            emit(NetworkResponseState.Loading)
+            when (val response = bindGetAgentsRemoteSource.getMaps()) {
+                is NetworkResponseState.Error -> {
+                    emit(NetworkResponseState.Error(response.exception))
+                }
+                is NetworkResponseState.Success -> {
+                    emit(NetworkResponseState.Success(valorantMapperM.map(response.result)))
+                }
+                else -> {}
+            }
+        }.flowOn(ioDispatcher)
     }
 }

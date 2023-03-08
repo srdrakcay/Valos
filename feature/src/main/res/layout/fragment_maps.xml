@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".weapon.WeaponsFragment" >
+    tools:context=".map.MapsFragment">
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/weapons_item"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.agentsFragment -> bottomNavigation.show()
                 R.id.weaponsFragment->bottomNavigation.show()
+                R.id.mapsFragment->bottomNavigation.show()
+                R.id.favoriteFragment->bottomNavigation.show()
                 else -> bottomNavigation.notShow()
             }
         }

@@ -1,4 +1,4 @@
-package com.serdar.presentation.agents
+package com.serdar.presentation.agent
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

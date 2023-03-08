@@ -6,7 +6,7 @@
     app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/agentsFragment"
-        android:name="com.serdar.presentation.agents.AgentsFragment"
+        android:name="com.serdar.presentation.agent.AgentsFragment"
         android:label="HomeFragment" />
     <fragment
         android:id="@+id/splashFragment"
@@ -18,7 +18,15 @@
     </fragment>
     <fragment
         android:id="@+id/weaponsFragment"
-        android:name="com.serdar.presentation.weapons.WeaponsFragment"
+        android:name="com.serdar.presentation.weapon.WeaponsFragment"
         android:label="WeaponsFragment" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.serdar.presentation.map.MapsFragment"
+        android:label="MapsFragment" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.serdar.presentation.favorite.FavoriteFragment"
+        android:label="FavoriteFragment" />
 
 </navigation>

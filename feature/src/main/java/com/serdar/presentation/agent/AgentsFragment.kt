@@ -1,4 +1,4 @@
-package com.serdar.presentation.weapons
+package com.serdar.presentation.agent
 
 import android.os.Bundle
 import android.view.View
@@ -6,15 +6,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.serdar.common.binding.viewBinding
 import com.serdar.presentation.R
-import com.serdar.presentation.databinding.FragmentWeaponsBinding
+import com.serdar.presentation.databinding.FragmentAgentsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class WeaponsFragment : Fragment(R.layout.fragment_weapons) {
-    private val viewModel: WeaponsViewModel by viewModels()
-    private val binding by viewBinding(FragmentWeaponsBinding::bind)
-    private val weaponsAdapter by lazy {
-        WeaponsAdapter(emptyList())
+class AgentsFragment : Fragment(R.layout.fragment_agents) {
+    private val viewModel: AgentsViewModel by viewModels()
+    private val binding by viewBinding(FragmentAgentsBinding::bind)
+    private val agentsAdapter by lazy {
+        AgentsAdapter(emptyList())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -23,23 +23,23 @@ class WeaponsFragment : Fragment(R.layout.fragment_weapons) {
     }
 
     private fun uiState() {
-        viewModel.valorantWeaponsUiState.observe(viewLifecycleOwner) {
+        viewModel.valorantHomeUiState.observe(viewLifecycleOwner) {
             when (it) {
-                is WeaponsUiState.Loading -> {
+                is AgentsUiState.Loading -> {
                     //do something
 
                     println("data Loading")
                 }
-                is WeaponsUiState.Error -> {
+                is AgentsUiState.Error -> {
                     //do something
                     println("data error")
                 }
-                is WeaponsUiState.Success -> {
-                    binding.rcView.adapter = weaponsAdapter
-                    weaponsAdapter.updateData(it.data)
+                is AgentsUiState.Success -> {
+                    binding.rcView.adapter = agentsAdapter
+                    agentsAdapter.updateData(it.data)
                 }
             }
         }
     }
-
 }
+

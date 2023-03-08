@@ -1,4 +1,4 @@
-package com.serdar.presentation.agents
+package com.serdar.presentation.agent
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

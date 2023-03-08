@@ -1,13 +1,13 @@
-package com.serdar.presentation.weapons
+package com.serdar.presentation.map
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.serdar.common.entity.ValorantWeaponsEntity
+import com.serdar.common.entity.ValorantMapsEntity
 import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.NetworkResponseState
-import com.serdar.domain.usecase.getweaponsusecase.GetWeaponsUseCase
+import com.serdar.domain.usecase.getmapsusecase.GetMapsUseCase
 import com.serdar.presentation.R
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
@@ -15,14 +15,13 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class WeaponsViewModel @Inject constructor(
-    private val getWeaponsUseCase: GetWeaponsUseCase,
-    private val valorantUiWeaponsMapper: ValorantListMapper<ValorantWeaponsEntity, WeaponsUiData>
+class MapsViewModel @Inject constructor(
+    private val getMapsUseCase: GetMapsUseCase,
+    private val valorantUiMapsMapper: ValorantListMapper<ValorantMapsEntity, MapsUiData>
 ) : ViewModel() {
 
-
-    private val _valorantWeaponsUiState = MutableLiveData<WeaponsUiState>()
-    val valorantWeaponsUiState: LiveData<WeaponsUiState> get() = _valorantWeaponsUiState
+    private val _valorantMapsUiState = MutableLiveData<MapsUiState>()
+    val valorantMapsUiState: LiveData<MapsUiState> get() = _valorantMapsUiState
 
     init {
         getWeapons()
@@ -30,18 +29,18 @@ class WeaponsViewModel @Inject constructor(
 
     private fun getWeapons() {
         viewModelScope.launch {
-            getWeaponsUseCase().collectLatest {
+            getMapsUseCase().collectLatest {
                 when (it) {
                     is NetworkResponseState.Error -> {
-                        _valorantWeaponsUiState.postValue(WeaponsUiState.Error(R.string.error))
+                        _valorantMapsUiState.postValue(MapsUiState.Error(R.string.error))
                     }
                     NetworkResponseState.Loading -> {
-                        _valorantWeaponsUiState.postValue(WeaponsUiState.Loading)
+                        _valorantMapsUiState.postValue(MapsUiState.Loading)
                     }
                     is NetworkResponseState.Success -> {
-                        _valorantWeaponsUiState.postValue(
-                            WeaponsUiState.Success(
-                                valorantUiWeaponsMapper.map(it.result)
+                        _valorantMapsUiState.postValue(
+                            MapsUiState.Success(
+                                valorantUiMapsMapper.map(it.result)
                             )
                         )
                     }
@@ -49,4 +48,5 @@ class WeaponsViewModel @Inject constructor(
             }
         }
     }
+
 }
