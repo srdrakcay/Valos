@@ -52,6 +52,7 @@ dependencies {
     api(Libraries.retrofit)
     api(Libraries.gson)
     api(Libraries.retrofitGsonConverter)
-
-
+    api(Libraries.roomCompiler)
+    api(Libraries.roomKtx)
+    api(Libraries.roomRunTime)
 }
