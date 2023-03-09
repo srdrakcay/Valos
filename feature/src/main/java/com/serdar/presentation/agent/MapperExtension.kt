@@ -7,6 +7,7 @@ fun AgentsUiData.toAdverts() = FavoritesDataModel(
     name = displayName?:"",
     desc = killfeedPortrait?:"",
     image = fullPortrait?:"",
-    id = uuid?.toInt()?:-1
+    id = 0,
+    uuid = uuid?:""
 
 )
