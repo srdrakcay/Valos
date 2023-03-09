@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import com.serdar.common.binding.viewBinding
 import com.serdar.presentation.R
 import com.serdar.presentation.databinding.FragmentAgentsBinding
+import com.serdar.presentation.utility.toUiData
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,8 +38,8 @@ class AgentsFragment : Fragment(R.layout.fragment_agents) {
                 is AgentsUiState.Success -> {
                     binding.rcView.adapter = agentsAdapter
                     agentsAdapter.updateData(it.data)
-                    agentsAdapter.onItemClick={it->
-                        viewModel.addFavoriteItem(it.toAdverts())
+                    agentsAdapter.onItemClick = { it ->
+                        viewModel.addFavoriteItem(it.toUiData())
                     }
                 }
             }

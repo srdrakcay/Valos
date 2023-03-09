@@ -1,7 +1,6 @@
 package com.serdar.data.dto.favorite
 
 import androidx.room.Entity
-import androidx.room.PrimaryKey
 
 @Entity(tableName = "favorite_table", primaryKeys = ["id","uuid"])
 data class FavoritesDataModel(

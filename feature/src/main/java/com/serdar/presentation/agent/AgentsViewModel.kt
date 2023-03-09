@@ -21,7 +21,6 @@ class AgentsViewModel @Inject constructor(
     private val getAgentsUseCase: GetAgentsUseCase,
     private val addItemFavoriteUseCase: AddItemFavoriteUseCase,
     private val valorantUiMapper: ValorantListMapper<ValorantAgentsEntity, AgentsUiData>,
-    private val valorantFavorite: ValorantListMapper<FavoritesDataModel, AgentsUiData>
 ) : ViewModel() {
 
     private val _valorantHomeUiState = MutableLiveData<AgentsUiState>()

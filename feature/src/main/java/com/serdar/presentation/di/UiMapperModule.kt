@@ -4,13 +4,10 @@ import com.serdar.common.entity.ValorantAgentsEntity
 import com.serdar.common.entity.ValorantMapsEntity
 import com.serdar.common.entity.ValorantWeaponsEntity
 import com.serdar.common.mapper.ValorantListMapper
-import com.serdar.data.dto.favorite.FavoritesDataModel
 import com.serdar.presentation.agent.AgentsUiData
 import com.serdar.presentation.agent.AgentsUiMapper
-import com.serdar.presentation.map.MapsAdapter
 import com.serdar.presentation.map.MapsUiData
 import com.serdar.presentation.map.MapsUiMapper
-import com.serdar.presentation.uimapper.ValorantFavoriteMapper
 import com.serdar.presentation.weapon.WeaponsUiData
 import com.serdar.presentation.weapon.WeaponsUiMapper
 import dagger.Binds
@@ -34,8 +31,4 @@ abstract class UiMapperModule {
     @ViewModelScoped
     abstract fun valorantUiMapsMapper(mapsUiMapper: MapsUiMapper): ValorantListMapper<ValorantMapsEntity, MapsUiData>
 
-
-    @Binds
-    @ViewModelScoped
-    abstract fun valorantUiFavoriteMapper(valorantFavoriteMapper: ValorantFavoriteMapper): ValorantListMapper<FavoritesDataModel, AgentsUiData>
 }
