@@ -8,10 +8,11 @@ import com.serdar.common.extension.loadUrl
 import com.serdar.data.dto.favorite.FavoritesDataModel
 import com.serdar.presentation.databinding.AgentItemBinding
 
-class AgentsAdapter(private var agentsUiData: List<AgentsUiData>) :
+class AgentsAdapter(private var agentsUiData: List<AgentsUiData>,
+                    var onItemClick: ((AgentsUiData) -> Unit)? = null) :
     RecyclerView.Adapter<AgentsAdapter.MyViewHolder>() {
 
-    var onItemClick: ((List<AgentsUiData>) -> Unit)? = null
+
 
     inner class MyViewHolder(private val viewBinding: AgentItemBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
@@ -32,10 +33,10 @@ class AgentsAdapter(private var agentsUiData: List<AgentsUiData>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bindItems(agentsUiData[position])
-
         holder.itemView.setOnClickListener {
-          onItemClick?.invoke(agentsUiData)
+            onItemClick?.invoke(agentsUiData[position])
         }
+
     }
 
     override fun getItemCount(): Int {

@@ -37,7 +37,9 @@ class AgentsFragment : Fragment(R.layout.fragment_agents) {
                 is AgentsUiState.Success -> {
                     binding.rcView.adapter = agentsAdapter
                     agentsAdapter.updateData(it.data)
-
+                    agentsAdapter.onItemClick={it->
+                        viewModel.addFavoriteItem(it.toAdverts())
+                    }
                 }
             }
         }

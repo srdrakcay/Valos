@@ -50,7 +50,6 @@ dependencies {
 // Kotlin Extensions and Coroutines support for Room
     implementation ("androidx.room:room-ktx:2.5.0")
     implementation(project(Modules.Common))
-
     kapt(Libraries.daggerHiltCompiler)
     api(Libraries.daggerHilt)
     api(Libraries.retrofit)

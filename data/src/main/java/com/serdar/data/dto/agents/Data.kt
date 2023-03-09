@@ -2,7 +2,6 @@ package com.serdar.data.dto.agents
 
 
 data class Data(
-
     val abilities: List<Ability>,
     val assetPath: String,
     val background: String,
