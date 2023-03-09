@@ -44,7 +44,11 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
+    annotationProcessor ("androidx.room:room-compiler:2.5.0")
+    implementation ("androidx.room:room-runtime:2.5.0")
+    kapt ("androidx.room:room-compiler:2.5.0")
+// Kotlin Extensions and Coroutines support for Room
+    implementation ("androidx.room:room-ktx:2.5.0")
     implementation(project(Modules.Common))
 
     kapt(Libraries.daggerHiltCompiler)
@@ -52,7 +56,5 @@ dependencies {
     api(Libraries.retrofit)
     api(Libraries.gson)
     api(Libraries.retrofitGsonConverter)
-    api(Libraries.roomCompiler)
-    api(Libraries.roomKtx)
-    api(Libraries.roomRunTime)
+
 }

@@ -4,6 +4,7 @@ import com.serdar.domain.usecase.additemusecase.AddItemFavoriteUseCase
 import com.serdar.domain.usecase.additemusecase.AddItemFavoriteUseCaseImpl
 import com.serdar.domain.usecase.deleteallusecase.DeleteAllFavoriteItemUseCase
 import com.serdar.domain.usecase.deleteallusecase.DeleteAllFavoriteItemUseCaseImpl
+import com.serdar.domain.usecase.deleteitemusecase.DeleteFavoriteItemUseCase
 import com.serdar.domain.usecase.deleteitemusecase.DeleteFavoriteItemUseCaseImpl
 import com.serdar.domain.usecase.getagentsusecase.GetAgentsUseCase
 import com.serdar.domain.usecase.getagentsusecase.GetAgentsUseCaseImpl
@@ -48,7 +49,7 @@ abstract class UseCaseModule {
 
     @Binds
     @ViewModelScoped
-    abstract fun bindDeleteItem(deleteFavoriteItemUseCaseImpl: DeleteFavoriteItemUseCaseImpl): DeleteAllFavoriteItemUseCase
+    abstract fun bindDeleteItem(deleteFavoriteItemUseCaseImpl: DeleteFavoriteItemUseCaseImpl): DeleteFavoriteItemUseCase
 
     @Binds
     @ViewModelScoped

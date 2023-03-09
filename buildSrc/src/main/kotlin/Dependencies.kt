@@ -56,7 +56,7 @@
         val timber = "4.7.1"
         val lifecycle = "2.4.0"
         val nav = "2.5.3"
-        val room = "2.1.0-alpha06"
+        val room = "2.5.0"
         val recyclerview = "1.0.0"
         val safeArgs = "2.4.2"
         val glide = "4.9.0"

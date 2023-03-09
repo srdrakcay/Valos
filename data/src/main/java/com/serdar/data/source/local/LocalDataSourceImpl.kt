@@ -16,6 +16,8 @@ class LocalDataSourceImpl @Inject constructor(private val favoritesDao: Favorite
     override suspend fun deleteValorantItem(item: FavoritesDataModel) =
         favoritesDao.deleteValorantItem(item)
 
-    override suspend fun deleteAlValorantItem() =
+    override suspend fun deleteAllValorantItem() {
         favoritesDao.deleteAllValorantItem()
+    }
+
 }
