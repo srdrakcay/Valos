@@ -8,8 +8,8 @@ import com.serdar.common.entity.ValorantAgentsEntity
 import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.NetworkResponseState
 import com.serdar.data.dto.favorite.FavoritesDataModel
-import com.serdar.domain.usecase.additemusecase.AddItemFavoriteUseCase
-import com.serdar.domain.usecase.getagentsusecase.GetAgentsUseCase
+import com.serdar.domain.usecase.favoritesusecase.additemusecase.AddItemFavoriteUseCase
+import com.serdar.domain.usecase.agentsusecase.getagentsusecase.GetAgentsUseCase
 import com.serdar.presentation.R
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest

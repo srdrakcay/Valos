@@ -1,4 +1,4 @@
-package com.serdar.domain.usecase.getmapsusecase
+package com.serdar.domain.usecase.mapsusecase.getmapsusecase
 
 import com.serdar.common.entity.ValorantMapsEntity
 import com.serdar.data.NetworkResponseState

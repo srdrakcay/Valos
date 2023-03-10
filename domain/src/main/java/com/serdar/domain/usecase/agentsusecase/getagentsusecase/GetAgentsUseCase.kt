@@ -1,4 +1,4 @@
-package com.serdar.domain.usecase.getagentsusecase
+package com.serdar.domain.usecase.agentsusecase.getagentsusecase
 
 import com.serdar.common.entity.ValorantAgentsEntity
 import com.serdar.data.NetworkResponseState

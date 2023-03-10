@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.serdar.common.entity.ValorantWeaponsEntity
 import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.NetworkResponseState
-import com.serdar.domain.usecase.getweaponsusecase.GetWeaponsUseCase
+import com.serdar.domain.usecase.weaponsusecase.getweaponsusecase.GetWeaponsUseCase
 import com.serdar.presentation.R
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest

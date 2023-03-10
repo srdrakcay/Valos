@@ -1,4 +1,4 @@
-package com.serdar.domain.usecase.getagentsusecase
+package com.serdar.domain.usecase.agentsusecase.getagentsusecase
 
 import com.serdar.common.entity.ValorantAgentsEntity
 import com.serdar.data.NetworkResponseState
@@ -8,6 +8,6 @@ import javax.inject.Inject
 
 class GetAgentsUseCaseImpl @Inject constructor(
     private val repository: ValorantRepository
-):GetAgentsUseCase {
+): GetAgentsUseCase {
     override suspend fun invoke(): Flow<NetworkResponseState<List<ValorantAgentsEntity>>> =repository.getAgents()
 }

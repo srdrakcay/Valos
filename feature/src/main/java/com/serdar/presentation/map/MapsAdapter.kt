@@ -18,7 +18,7 @@ class MapsAdapter(private var mapsUiData:List<MapsUiData>) :
 
         fun bindItems(mapsUiData: MapsUiData) {
             viewBinding.imageView.loadUrl(mapsUiData.displayIcon)
-            viewBinding.textView.text=mapsUiData.displayName
+            viewBinding.textView.text=mapsUiData.coordinates
         }
     }
 

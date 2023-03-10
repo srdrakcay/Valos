@@ -15,8 +15,8 @@ class WeaponsAdapter(private var weaponsUiData: List<WeaponsUiData>) :
         RecyclerView.ViewHolder(viewBinding.root) {
 
         fun bindItems(weaponsUiData: WeaponsUiData) {
-            viewBinding.imageView.loadUrl(weaponsUiData.displayIcon)
-            viewBinding.textView.text=weaponsUiData.displayName
+            viewBinding.imageView.loadUrl(weaponsUiData.killStreamIcon)
+            viewBinding.textView.text=weaponsUiData.assetPath
         }
     }
 

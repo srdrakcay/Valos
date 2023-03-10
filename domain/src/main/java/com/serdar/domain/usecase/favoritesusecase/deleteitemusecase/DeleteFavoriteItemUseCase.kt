@@ -1,4 +1,4 @@
-package com.serdar.domain.usecase.deleteitemusecase
+package com.serdar.domain.usecase.favoritesusecase.deleteitemusecase
 
 import com.serdar.data.dto.favorite.FavoritesDataModel
 

@@ -1,4 +1,4 @@
-package com.serdar.domain.usecase.getweaponsusecase
+package com.serdar.domain.usecase.weaponsusecase.getweaponsusecase
 
 import com.serdar.common.entity.ValorantWeaponsEntity
 import com.serdar.data.NetworkResponseState
@@ -8,6 +8,6 @@ import javax.inject.Inject
 
 class GetWeaponsUseCaseImpl @Inject constructor(
     private val repository: ValorantRepository
-):GetWeaponsUseCase {
+): GetWeaponsUseCase {
     override suspend fun invoke(): Flow<NetworkResponseState<List<ValorantWeaponsEntity>>> =repository.getWeapons()
 }

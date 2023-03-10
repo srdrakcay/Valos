@@ -1,13 +1,9 @@
 package com.serdar.data.di.mapper
 
-import com.serdar.common.entity.ValorantAgentsEntity
-import com.serdar.common.entity.ValorantMapsEntity
-import com.serdar.common.entity.ValorantWeaponsEntity
+import com.serdar.common.entity.*
 import com.serdar.common.mapper.ValorantListMapper
-import com.serdar.data.mapper.ValorantAgentsMainMapper
 import com.serdar.data.dto.agents.Data
-import com.serdar.data.mapper.ValorantMapsMainMapper
-import com.serdar.data.mapper.ValorantWeaponsMainMapper
+import com.serdar.data.mapper.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -29,5 +25,17 @@ abstract class MapperModule {
     @Binds
     @Singleton
     abstract fun valorantMapsMapper(valorantMapsMainMapper: ValorantMapsMainMapper): ValorantListMapper<com.serdar.data.dto.maps.Data, ValorantMapsEntity>
+
+    @Binds
+    @Singleton
+    abstract fun valorantAgentsDetailMapper(valorantAgentsDetailMapper: ValorantAgentsDetailMapper): ValorantListMapper<com.serdar.data.dto.agents.Data, ValorantAgentsDetailEntity>
+
+    @Binds
+    @Singleton
+    abstract fun valorantWeaponsDetailMapper(valorantWeaponsDetailMapper: ValorantWeaponsDetailMapper): ValorantListMapper<com.serdar.data.dto.weapons.Data, ValorantWeaponsDetailEntity>
+
+    @Binds
+    @Singleton
+    abstract fun valorantMapsDetailMapper(valorantMapsDetailMapper: ValorantMapsDetailMapper): ValorantListMapper<com.serdar.data.dto.maps.Data, ValorantMapsDetailEntity>
 
 }

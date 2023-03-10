@@ -32,4 +32,26 @@ class RemoteDataSourceImpl @Inject constructor(
             NetworkResponseState.Error(e)
         }
 
+    override suspend fun getAgentsWithUuid(uuid: String): NetworkResponseState<List<Data>>  =
+        try {
+            val response = valorantApi.getAgentsWithUuid(uuid)
+            NetworkResponseState.Success(response.data)
+        } catch (e: Exception) {
+            NetworkResponseState.Error(e)
+        }
+
+    override suspend fun getWeaponsWithUuid(uuid: String): NetworkResponseState<List<com.serdar.data.dto.weapons.Data>>  =
+        try {
+            val response = valorantApi.getWeaponsWithUuid(uuid)
+            NetworkResponseState.Success(response.data)
+        } catch (e: Exception) {
+            NetworkResponseState.Error(e)
+        }
+    override suspend fun getMapsWithUuid(uuid: String): NetworkResponseState<List<com.serdar.data.dto.maps.Data>> =
+        try {
+            val response = valorantApi.getMapsWithUuid(uuid)
+            NetworkResponseState.Success(response.data)
+        } catch (e: Exception) {
+            NetworkResponseState.Error(e)
+        }
 }
