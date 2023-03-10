@@ -1,5 +1,7 @@
 package com.serdar.domain.di
 
+import com.serdar.domain.usecase.agentsusecase.agentsdetailusecase.AgentsDetailUseCase
+import com.serdar.domain.usecase.agentsusecase.agentsdetailusecase.AgentsDetailUseCaseImpl
 import com.serdar.domain.usecase.favoritesusecase.additemusecase.AddItemFavoriteUseCase
 import com.serdar.domain.usecase.favoritesusecase.additemusecase.AddItemFavoriteUseCaseImpl
 import com.serdar.domain.usecase.favoritesusecase.deleteallusecase.DeleteAllFavoriteItemUseCase
@@ -56,7 +58,9 @@ abstract class UseCaseModule {
     abstract fun bindAddItem(addItemFavoriteUseCaseImpl: AddItemFavoriteUseCaseImpl): AddItemFavoriteUseCase
 
 
-
+    @Binds
+    @ViewModelScoped
+    abstract fun bindAgentsDetail(agentsDetailUseCaseImpl: AgentsDetailUseCaseImpl): AgentsDetailUseCase
 
 
 }
