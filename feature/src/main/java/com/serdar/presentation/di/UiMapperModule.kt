@@ -36,7 +36,7 @@ abstract class UiMapperModule {
 
     @Binds
     @ViewModelScoped
-    abstract fun valorantUiMapsMapper(agentsDetailMapper: AgentsDetailMapper): ValorantListMapper<ValorantAgentsDetailEntity, AgentsDetailData>
+    abstract fun valorantAgentsDetailMapper(agentsDetailMapper: AgentsDetailMapper): ValorantListMapper<ValorantAgentsDetailEntity, AgentsDetailData>
 
 
 }

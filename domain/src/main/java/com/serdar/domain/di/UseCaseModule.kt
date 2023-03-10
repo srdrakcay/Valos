@@ -16,6 +16,10 @@ import com.serdar.domain.usecase.weaponsusecase.getweaponsusecase.GetWeaponsUseC
 import com.serdar.domain.usecase.weaponsusecase.getweaponsusecase.GetWeaponsUseCaseImpl
 import com.serdar.domain.usecase.favoritesusecase.readallitemusecase.ReadAllFavoriteItemUseCase
 import com.serdar.domain.usecase.favoritesusecase.readallitemusecase.ReadAllFavoriteItemUseCaseImpl
+import com.serdar.domain.usecase.mapsusecase.mapsdetailusecase.MapsDetailUseCase
+import com.serdar.domain.usecase.mapsusecase.mapsdetailusecase.MapsDetailUseCaseImpl
+import com.serdar.domain.usecase.weaponsusecase.weaponsdetailusecase.WeaponsDetailUseCase
+import com.serdar.domain.usecase.weaponsusecase.weaponsdetailusecase.WeaponsDetailUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -62,5 +66,11 @@ abstract class UseCaseModule {
     @ViewModelScoped
     abstract fun bindAgentsDetail(agentsDetailUseCaseImpl: AgentsDetailUseCaseImpl): AgentsDetailUseCase
 
+    @Binds
+    @ViewModelScoped
+    abstract fun bindWeponsDetail(weaponsDetailUseCaseImpl: WeaponsDetailUseCaseImpl): WeaponsDetailUseCase
 
+    @Binds
+    @ViewModelScoped
+    abstract fun bindMapsDetail(mapsDetailUseCaseImpl: MapsDetailUseCaseImpl): MapsDetailUseCase
 }

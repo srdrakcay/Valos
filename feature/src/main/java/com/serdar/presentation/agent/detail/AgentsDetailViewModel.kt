@@ -14,10 +14,12 @@ import com.serdar.domain.usecase.favoritesusecase.additemusecase.AddItemFavorite
 import com.serdar.presentation.R
 import com.serdar.presentation.agent.AgentsUiData
 import com.serdar.presentation.agent.AgentsUiState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class AgentsDetailViewModel@Inject constructor(
     private val agentsDetailUseCase: AgentsDetailUseCase,
     private val valorantUiDetailMapper: ValorantListMapper<ValorantAgentsDetailEntity, AgentsDetailData>,
@@ -27,7 +29,7 @@ class AgentsDetailViewModel@Inject constructor(
     private val _valorantAgentsDetailUiState = MutableLiveData<AgentsDetailState>()
     val valorantAgentsDetailUiState: LiveData<AgentsDetailState> get() = _valorantAgentsDetailUiState
 
-    private fun getAgentsDetail(uuid:String) {
+    fun getAgentsDetail(uuid:String) {
         viewModelScope.launch {
             agentsDetailUseCase(uuid).collectLatest {
                 when (it) {

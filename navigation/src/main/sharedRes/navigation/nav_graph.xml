@@ -7,7 +7,11 @@
     <fragment
         android:id="@+id/agentsFragment"
         android:name="com.serdar.presentation.agent.AgentsFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_agentsFragment_to_agentsDetailFragment"
+            app:destination="@id/agentsDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.serdar.presentation.splash.SplashFragment"
@@ -28,5 +32,9 @@
         android:id="@+id/favoriteFragment"
         android:name="com.serdar.presentation.favorite.FavoriteFragment"
         android:label="FavoriteFragment" />
+    <fragment
+        android:id="@+id/agentsDetailFragment"
+        android:name="com.serdar.presentation.agent.detail.AgentsDetailFragment"
+        android:label="AgentsDetailFragment" />
 
 </navigation>

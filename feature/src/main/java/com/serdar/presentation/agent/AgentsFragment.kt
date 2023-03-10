@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.serdar.common.binding.viewBinding
 import com.serdar.presentation.R
 import com.serdar.presentation.databinding.FragmentAgentsBinding
@@ -39,7 +40,7 @@ class AgentsFragment : Fragment(R.layout.fragment_agents) {
                     binding.rcView.adapter = agentsAdapter
                     agentsAdapter.updateData(it.data)
                     agentsAdapter.onItemClick = { it ->
-                        viewModel.addFavoriteItem(it.toUiData())
+                       findNavController().navigate(com.serdar.navigation.R.id.action_agentsFragment_to_agentsDetailFragment)
                     }
                 }
             }

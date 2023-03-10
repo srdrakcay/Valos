@@ -6,7 +6,6 @@ data class ValorantMapsDetailEntity(
     val displayIcon: String,
     val displayName: String,
     val listViewIcon: String,
-
     val splash: String,
     val uuid: String,
 )
