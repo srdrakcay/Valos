@@ -6,8 +6,8 @@ import com.serdar.data.dto.agents.Data
 import javax.inject.Inject
 
 class ValorantAgentsDetailMapper @Inject constructor() :
-    ValorantListMapper<Data, ValorantAgentsDetailEntity> {
-    override fun map(input: List<Data>?): List<ValorantAgentsDetailEntity> {
+    ValorantListMapper<com.serdar.data.dto.agents.detail.Data, ValorantAgentsDetailEntity> {
+    override fun map(input: List<com.serdar.data.dto.agents.detail.Data>?): List<ValorantAgentsDetailEntity> {
         return input?.map {
             ValorantAgentsDetailEntity(
                 displayName = it.displayName,

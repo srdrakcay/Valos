@@ -1,7 +1,4 @@
-package com.serdar.data.dto.agents
-
-import com.google.gson.annotations.SerializedName
-
+package com.serdar.data.dto.agents.detail
 
 data class Data(
     val abilities: List<Ability>,
@@ -9,7 +6,7 @@ data class Data(
     val background: String,
     val backgroundGradientColors: List<String>,
     val bustPortrait: String,
-    val characterTags: List<String>,
+    val characterTags: Any,
     val description: String,
     val developerName: String,
     val displayIcon: String,

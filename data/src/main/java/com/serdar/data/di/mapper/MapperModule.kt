@@ -28,14 +28,14 @@ abstract class MapperModule {
 
     @Binds
     @Singleton
-    abstract fun valorantAgentsDetailMapper(valorantAgentsDetailMapper: ValorantAgentsDetailMapper): ValorantListMapper<com.serdar.data.dto.agents.Data, ValorantAgentsDetailEntity>
+    abstract fun valorantAgentsDetailMapper(valorantAgentsDetailMapper: ValorantAgentsDetailMapper): ValorantListMapper<com.serdar.data.dto.agents.detail.Data, ValorantAgentsDetailEntity>
 
     @Binds
     @Singleton
-    abstract fun valorantWeaponsDetailMapper(valorantWeaponsDetailMapper: ValorantWeaponsDetailMapper): ValorantListMapper<com.serdar.data.dto.weapons.Data, ValorantWeaponsDetailEntity>
+    abstract fun valorantWeaponsDetailMapper(valorantWeaponsDetailMapper: ValorantWeaponsDetailMapper): ValorantListMapper<com.serdar.data.dto.weapons.detail.Data, ValorantWeaponsDetailEntity>
 
     @Binds
     @Singleton
-    abstract fun valorantMapsDetailMapper(valorantMapsDetailMapper: ValorantMapsDetailMapper): ValorantListMapper<com.serdar.data.dto.maps.Data, ValorantMapsDetailEntity>
+    abstract fun valorantMapsDetailMapper(valorantMapsDetailMapper: ValorantMapsDetailMapper): ValorantListMapper<com.serdar.data.dto.maps.detail.Data, ValorantMapsDetailEntity>
 
 }

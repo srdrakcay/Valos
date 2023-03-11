@@ -2,7 +2,7 @@ package com.serdar.data.mapper
 
 import com.serdar.common.entity.ValorantMapsDetailEntity
 import com.serdar.common.mapper.ValorantListMapper
-import com.serdar.data.dto.maps.Data
+import com.serdar.data.dto.maps.detail.Data
 import javax.inject.Inject
 
 class ValorantMapsDetailMapper @Inject constructor() :

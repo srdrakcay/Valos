@@ -12,9 +12,9 @@ interface RemoteDataSource {
 
     suspend fun getMaps(): NetworkResponseState<List<com.serdar.data.dto.maps.Data>>
 
-    suspend fun getAgentsWithUuid(uuid:String):NetworkResponseState<List<Data>>
+    suspend fun getAgentsWithUuid(uuid:String):NetworkResponseState<List<com.serdar.data.dto.agents.detail.Data>>
 
-    suspend fun getWeaponsWithUuid(uuid:String):NetworkResponseState<List<com.serdar.data.dto.weapons.Data>>
+    suspend fun getWeaponsWithUuid(uuid:String):NetworkResponseState<List<com.serdar.data.dto.weapons.detail.Data>>
 
-    suspend fun getMapsWithUuid(uuid:String):NetworkResponseState<List<com.serdar.data.dto.maps.Data>>
+    suspend fun getMapsWithUuid(uuid:String):NetworkResponseState<List<com.serdar.data.dto.maps.detail.Data>>
 }

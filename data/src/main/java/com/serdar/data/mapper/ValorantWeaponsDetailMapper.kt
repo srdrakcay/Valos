@@ -2,11 +2,12 @@ package com.serdar.data.mapper
 
 import com.serdar.common.entity.ValorantWeaponsDetailEntity
 import com.serdar.common.mapper.ValorantListMapper
+import com.serdar.data.dto.weapons.detail.Data
 import javax.inject.Inject
 
 class ValorantWeaponsDetailMapper @Inject constructor() :
-    ValorantListMapper<com.serdar.data.dto.weapons.Data, ValorantWeaponsDetailEntity> {
-    override fun map(input: List<com.serdar.data.dto.weapons.Data>?): List<ValorantWeaponsDetailEntity> {
+    ValorantListMapper<Data, ValorantWeaponsDetailEntity> {
+    override fun map(input: List<Data>?): List<ValorantWeaponsDetailEntity> {
         return input?.map {
             ValorantWeaponsDetailEntity(
                 assetPath = it.assetPath,

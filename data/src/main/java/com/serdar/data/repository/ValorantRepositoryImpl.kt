@@ -24,9 +24,9 @@ class ValorantRepositoryImpl @Inject constructor(
     private val valorantMapperA: ValorantListMapper<Data, ValorantAgentsEntity>,
     private val valorantMapperW: ValorantListMapper<com.serdar.data.dto.weapons.Data, ValorantWeaponsEntity>,
     private val valorantMapperM: ValorantListMapper<com.serdar.data.dto.maps.Data, ValorantMapsEntity>,
-    private val valorantAgentsDetailMapper: ValorantListMapper<Data, ValorantAgentsDetailEntity>,
-    private val valorantWeaponsDetailMapper: ValorantListMapper<com.serdar.data.dto.weapons.Data, ValorantWeaponsDetailEntity>,
-    private val valorantMapsDetailMapper: ValorantListMapper<com.serdar.data.dto.maps.Data, ValorantMapsDetailEntity>,
+    private val valorantAgentsDetailMapper: ValorantListMapper<com.serdar.data.dto.agents.detail.Data, ValorantAgentsDetailEntity>,
+    private val valorantWeaponsDetailMapper: ValorantListMapper<com.serdar.data.dto.weapons.detail.Data, ValorantWeaponsDetailEntity>,
+    private val valorantMapsDetailMapper: ValorantListMapper<com.serdar.data.dto.maps.detail.Data, ValorantMapsDetailEntity>,
 
     @IoDispatcher
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO

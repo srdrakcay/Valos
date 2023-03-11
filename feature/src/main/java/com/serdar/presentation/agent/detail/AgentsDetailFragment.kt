@@ -18,7 +18,7 @@ class AgentsDetailFragment : Fragment(R.layout.fragment_agents_detail) {
         super.onViewCreated(view, savedInstanceState)
 
         uiState()
-        viewModel.getAgentsDetail("e370fa57-4757-3604-3648-499e1f642d3f")
+        viewModel.getAgentsDetail("dade69b4-4f5a-8528-247b-219e5a1facd6")
     }
     private fun uiState() {
         viewModel.valorantAgentsDetailUiState.observe(viewLifecycleOwner) {
