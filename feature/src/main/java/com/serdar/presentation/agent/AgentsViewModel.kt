@@ -12,6 +12,7 @@ import com.serdar.domain.usecase.favoritesusecase.additemusecase.AddItemFavorite
 import com.serdar.domain.usecase.agentsusecase.getagentsusecase.GetAgentsUseCase
 import com.serdar.presentation.R
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject

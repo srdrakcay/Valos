@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.serdar.common.binding.viewBinding
+import com.serdar.common.extension.notShow
+import com.serdar.common.extension.show
 import com.serdar.presentation.R
 import com.serdar.presentation.databinding.FragmentAgentsBinding
 import com.serdar.presentation.utility.toUiData
@@ -29,7 +31,6 @@ class AgentsFragment : Fragment(R.layout.fragment_agents) {
             when (it) {
                 is AgentsUiState.Loading -> {
                     //do something
-
                     println("data Loading")
                 }
                 is AgentsUiState.Error -> {
