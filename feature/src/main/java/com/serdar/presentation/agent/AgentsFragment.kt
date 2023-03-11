@@ -39,7 +39,7 @@ class AgentsFragment : Fragment(R.layout.fragment_agents) {
                     agentsAdapter.updateData(it.data)
                     agentsAdapter.onItemClick = { it ->
                         val action =
-                            AgentsFragmentDirections.actionAgentsFragmentToAgentsDetailFragment(it.uuid)
+                            AgentsFragmentDirections.actionAgentsFragmentToAgentsDetailFragment(it)
                         findNavController().navigate(action)
                     }
                 }

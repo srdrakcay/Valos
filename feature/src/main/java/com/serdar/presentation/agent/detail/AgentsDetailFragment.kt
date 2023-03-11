@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.serdar.common.binding.viewBinding
 import com.serdar.common.extension.loadUrl
 import com.serdar.presentation.R
@@ -14,11 +15,13 @@ import dagger.hilt.android.AndroidEntryPoint
 class AgentsDetailFragment : Fragment(R.layout.fragment_agents_detail) {
     private val binding by viewBinding(FragmentAgentsDetailBinding::bind)
     private val viewModel: AgentsDetailViewModel by viewModels()
+    private val args:AgentsDetailFragmentArgs by navArgs()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        agentsWithUuid()
         uiState()
-        viewModel.getAgentsDetail("dade69b4-4f5a-8528-247b-219e5a1facd6")
+
     }
     private fun uiState() {
         viewModel.valorantAgentsDetailUiState.observe(viewLifecycleOwner) {
@@ -33,12 +36,19 @@ class AgentsDetailFragment : Fragment(R.layout.fragment_agents_detail) {
                     println("data error")
                 }
                 is AgentsDetailState.Success -> {
-                    binding.image.loadUrl(it.data[0].fullPortraitV2)
-                    binding.desc.text=it.data[0].description
-                    binding.name.text=it.data[0].assetPath
-                    binding.imageView3.loadUrl(it.data[0].bustPortrait)
+                    dataSet(it.data)
                 }
             }
         }
+    }
+    private fun dataSet(agentsDetailData:List< AgentsDetailData>){
+        binding.image.loadUrl(agentsDetailData[0].fullPortraitV2)
+        binding.desc.text=agentsDetailData[0].description
+        binding.name.text=agentsDetailData[0].assetPath
+        binding.imageView3.loadUrl(agentsDetailData[0].bustPortrait)
+
+    }
+    private fun agentsWithUuid(){
+        viewModel.getAgentsDetail(args.uuid)
     }
 }

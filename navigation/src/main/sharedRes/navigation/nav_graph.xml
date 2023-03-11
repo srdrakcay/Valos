@@ -11,9 +11,6 @@
         <action
             android:id="@+id/action_agentsFragment_to_agentsDetailFragment"
             app:destination="@id/agentsDetailFragment" />
-        <argument
-            android:name="uuid"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -42,6 +39,9 @@
         <action
             android:id="@+id/action_agentsDetailFragment_to_agentsFragment"
             app:destination="@id/agentsFragment" />
+        <argument
+            android:name="uuid"
+            app:argType="string" />
 
     </fragment>
 

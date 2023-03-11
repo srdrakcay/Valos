@@ -9,7 +9,7 @@ import com.serdar.data.dto.favorite.FavoritesDataModel
 import com.serdar.presentation.databinding.AgentItemBinding
 
 class AgentsAdapter(private var agentsUiData: List<AgentsUiData>,
-                    var onItemClick: ((AgentsUiData) -> Unit)? = null) :
+                    var onItemClick: ((uuid:String) -> Unit)? = null) :
     RecyclerView.Adapter<AgentsAdapter.MyViewHolder>() {
 
 
@@ -34,7 +34,7 @@ class AgentsAdapter(private var agentsUiData: List<AgentsUiData>,
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bindItems(agentsUiData[position])
         holder.itemView.setOnClickListener {
-            onItemClick?.invoke(agentsUiData[position])
+            agentsUiData[position].uuid?.let { it1 -> onItemClick?.invoke(it1) }
         }
 
     }
