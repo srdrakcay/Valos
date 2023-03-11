@@ -8,6 +8,7 @@ import com.serdar.data.dto.weapons.WeaponResponse
 import com.serdar.data.dto.weapons.detail.WeaponsDetailResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ValorantApiService {
 

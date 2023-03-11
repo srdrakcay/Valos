@@ -27,7 +27,11 @@
     <fragment
         android:id="@+id/mapsFragment"
         android:name="com.serdar.presentation.map.MapsFragment"
-        android:label="MapsFragment" />
+        android:label="MapsFragment" >
+        <action
+            android:id="@+id/action_mapsFragment_to_mapsDetailFragment"
+            app:destination="@id/mapsDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.serdar.presentation.favorite.FavoriteFragment"
@@ -43,6 +47,17 @@
             android:name="uuid"
             app:argType="string" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/mapsDetailFragment"
+        android:name="com.serdar.presentation.map.detail.MapsDetailFragment"
+        android:label="MapsDetailFragment" >
+        <argument
+            android:name="uuid"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mapsDetailFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
     </fragment>
 
 </navigation>

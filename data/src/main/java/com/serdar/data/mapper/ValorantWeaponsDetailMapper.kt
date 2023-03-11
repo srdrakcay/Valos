@@ -15,7 +15,9 @@ class ValorantWeaponsDetailMapper @Inject constructor() :
                 displayName = it.displayName,
                 defaultSkinUuid = it.defaultSkinUuid,
                 category = it.category,
-                killStreamIcon = it.killStreamIcon
+                killStreamIcon = it.killStreamIcon,
+                uuid = it.uuid
+
             )
         } ?: emptyList()
     }

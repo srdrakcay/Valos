@@ -1,9 +1,6 @@
 package com.serdar.presentation.di
 
-import com.serdar.common.entity.ValorantAgentsDetailEntity
-import com.serdar.common.entity.ValorantAgentsEntity
-import com.serdar.common.entity.ValorantMapsEntity
-import com.serdar.common.entity.ValorantWeaponsEntity
+import com.serdar.common.entity.*
 import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.presentation.agent.AgentsUiData
 import com.serdar.presentation.agent.AgentsUiMapper
@@ -11,6 +8,8 @@ import com.serdar.presentation.agent.detail.AgentsDetailData
 import com.serdar.presentation.agent.detail.AgentsDetailMapper
 import com.serdar.presentation.map.MapsUiData
 import com.serdar.presentation.map.MapsUiMapper
+import com.serdar.presentation.map.detail.MapsDetailData
+import com.serdar.presentation.map.detail.MapsDetailMapper
 import com.serdar.presentation.weapon.WeaponsUiData
 import com.serdar.presentation.weapon.WeaponsUiMapper
 import dagger.Binds
@@ -38,5 +37,8 @@ abstract class UiMapperModule {
     @ViewModelScoped
     abstract fun valorantAgentsDetailMapper(agentsDetailMapper: AgentsDetailMapper): ValorantListMapper<ValorantAgentsDetailEntity, AgentsDetailData>
 
+    @Binds
+    @ViewModelScoped
+    abstract fun valorantMapsDetailMapper(mapsDetailMapper: MapsDetailMapper): ValorantListMapper<ValorantMapsDetailEntity, MapsDetailData>
 
 }

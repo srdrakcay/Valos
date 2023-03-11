@@ -37,9 +37,9 @@ class AgentsFragment : Fragment(R.layout.fragment_agents) {
                 is AgentsUiState.Success -> {
                     binding.rcView.adapter = agentsAdapter
                     agentsAdapter.updateData(it.data)
-                    agentsAdapter.onItemClick = { it ->
+                    agentsAdapter.onItemClick = {   data ->
                         val action =
-                            AgentsFragmentDirections.actionAgentsFragmentToAgentsDetailFragment(it)
+                            AgentsFragmentDirections.actionAgentsFragmentToAgentsDetailFragment(data)
                         findNavController().navigate(action)
                     }
                 }

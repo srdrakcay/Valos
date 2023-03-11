@@ -9,7 +9,8 @@ import com.serdar.presentation.databinding.MapsItemBinding
 import com.serdar.presentation.weapon.WeaponsUiData
 
 
-class MapsAdapter(private var mapsUiData:List<MapsUiData>) :
+class MapsAdapter(private var mapsUiData:List<MapsUiData>,
+                  var onItemClick: ((uuid:String) -> Unit)? = null) :
     RecyclerView.Adapter<MapsAdapter.MyViewHolder>() {
 
 
@@ -33,6 +34,9 @@ class MapsAdapter(private var mapsUiData:List<MapsUiData>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bindItems(mapsUiData[position])
 
+        holder.itemView.setOnClickListener {
+            mapsUiData[0].displayName?.let { it1 -> onItemClick?.invoke(it1) }
+        }
     }
 
     override fun getItemCount(): Int {
