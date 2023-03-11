@@ -33,8 +33,10 @@ class AgentsDetailFragment : Fragment(R.layout.fragment_agents_detail) {
                     println("data error")
                 }
                 is AgentsDetailState.Success -> {
-                    binding.imageView2.loadUrl(it.data[0].displayIcon)
-                    binding.textView2.text=it.data[0].description
+                    binding.image.loadUrl(it.data[0].fullPortraitV2)
+                    binding.desc.text=it.data[0].description
+                    binding.name.text=it.data[0].assetPath
+                    binding.imageView3.loadUrl(it.data[0].bustPortrait)
                 }
             }
         }

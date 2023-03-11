@@ -4,6 +4,7 @@ plugins {
     id(BuildPlugins.kotlinAndroid)
     id(BuildPlugins.kotlinKapt)
     id(BuildPlugins.DaggerHiltPlugin)
+    id(BuildPlugins.NavSafeArgs)
 }
 
 android {
@@ -60,6 +61,7 @@ dependencies {
     implementation(project(Modules.Data))
     implementation(project(Modules.Domain))
     implementation(project(Modules.Navigation))
+
 
     kapt(Libraries.daggerHiltCompiler)
     api(Libraries.daggerHilt)

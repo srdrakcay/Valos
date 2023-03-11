@@ -7,10 +7,13 @@
     <fragment
         android:id="@+id/agentsFragment"
         android:name="com.serdar.presentation.agent.AgentsFragment"
-        android:label="HomeFragment" >
+            android:label="AgentsFragment" >
         <action
             android:id="@+id/action_agentsFragment_to_agentsDetailFragment"
             app:destination="@id/agentsDetailFragment" />
+        <argument
+            android:name="uuid"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -35,6 +38,11 @@
     <fragment
         android:id="@+id/agentsDetailFragment"
         android:name="com.serdar.presentation.agent.detail.AgentsDetailFragment"
-        android:label="AgentsDetailFragment" />
+        android:label="AgentsDetailFragment" >
+        <action
+            android:id="@+id/action_agentsDetailFragment_to_agentsFragment"
+            app:destination="@id/agentsFragment" />
+
+    </fragment>
 
 </navigation>

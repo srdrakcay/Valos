@@ -1,6 +1,8 @@
 plugins {
     id(BuildPlugins.AndroidLibrary)
     id(BuildPlugins.kotlinJetBrains)
+    id(BuildPlugins.NavSafeArgs)
+
 }
 
 android {

@@ -6,11 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.serdar.common.binding.viewBinding
-import com.serdar.common.extension.notShow
-import com.serdar.common.extension.show
 import com.serdar.presentation.R
 import com.serdar.presentation.databinding.FragmentAgentsBinding
-import com.serdar.presentation.utility.toUiData
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -41,7 +38,9 @@ class AgentsFragment : Fragment(R.layout.fragment_agents) {
                     binding.rcView.adapter = agentsAdapter
                     agentsAdapter.updateData(it.data)
                     agentsAdapter.onItemClick = { it ->
-                       findNavController().navigate(com.serdar.navigation.R.id.action_agentsFragment_to_agentsDetailFragment)
+                        val action =
+                            AgentsFragmentDirections.actionAgentsFragmentToAgentsDetailFragment(it.uuid)
+                        findNavController().navigate(action)
                     }
                 }
             }

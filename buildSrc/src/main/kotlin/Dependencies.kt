@@ -57,7 +57,6 @@
         val lifecycle = "2.4.0"
         val nav = "2.5.3"
         val room = "2.5.0"
-        val recyclerview = "1.0.0"
         val safeArgs = "2.4.2"
         val glide = "4.9.0"
         val mockwebserver = "2.7.5"
@@ -111,16 +110,12 @@
         // ANDROID
         val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
         val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
-        val constraintLayout =
-            "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
         val lifeCycleViewModel = "androidx.lifecycle:lifecycle-viewmodel:${Versions.lifecycle}"
         val lifecycleViewModelExt = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
         val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
         val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
-        val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
         val navigation = "androidx.navigation:navigation-ui-ktx:${Versions.nav}"
         val navigationFrag = "androidx.navigation:navigation-fragment-ktx:${Versions.nav}"
-        val activityExt ="androidx.activity:activity-ktx:${Versions.activityExt}"
         val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 
     }
