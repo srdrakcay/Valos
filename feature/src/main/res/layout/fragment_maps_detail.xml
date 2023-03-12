@@ -6,14 +6,22 @@
     android:layout_height="match_parent"
     android:background="@color/item_background"
     tools:context=".map.detail.MapsDetailFragment">
+    <com.serdar.presentation.component.ValorantUiHeaderComponent
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+    </com.serdar.presentation.component.ValorantUiHeaderComponent>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/background"
         app:cardCornerRadius="20dp"
@@ -49,6 +57,16 @@
                 app:layout_constraintBottom_toBottomOf="@+id/image"
                 app:layout_constraintEnd_toStartOf="@+id/image"
                 app:layout_constraintTop_toTopOf="@+id/image" />
+
+            <ImageView
+                android:id="@+id/addFavoriteMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/ic_favorite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

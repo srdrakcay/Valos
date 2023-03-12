@@ -35,7 +35,7 @@ class MapsAdapter(private var mapsUiData:List<MapsUiData>,
         holder.bindItems(mapsUiData[position])
 
         holder.itemView.setOnClickListener {
-            mapsUiData[0].displayName?.let { it1 -> onItemClick?.invoke(it1) }
+            mapsUiData[position].displayName?.let { it1 -> onItemClick?.invoke(it1) }
         }
     }
 

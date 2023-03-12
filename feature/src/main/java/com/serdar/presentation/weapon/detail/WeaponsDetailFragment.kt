@@ -4,11 +4,17 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.serdar.common.binding.viewBinding
 import com.serdar.common.extension.loadUrl
+import com.serdar.common.extension.statusBar
+import com.serdar.data.dto.favorite.FavoritesDataModel
 import com.serdar.presentation.R
 import com.serdar.presentation.databinding.FragmentWeaponsDetailBinding
+import com.serdar.presentation.utility.moveTo
+import com.serdar.presentation.utility.toAgentsFavorite
+import com.serdar.presentation.utility.toMapsFavorite
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,6 +27,8 @@ class WeaponsDetailFragment : Fragment(R.layout.fragment_weapons_detail) {
         super.onViewCreated(view, savedInstanceState)
         uiState()
         setData()
+        statusBar("#1c252e")
+        toolBar()
 
     }
 
@@ -38,6 +46,7 @@ class WeaponsDetailFragment : Fragment(R.layout.fragment_weapons_detail) {
                 }
                 is WeaponsDetailState.Success -> {
                     dataSet(it.data)
+                    addFavorite(it.data.map { it.toMapsFavorite() })
                 }
             }
         }
@@ -45,14 +54,23 @@ class WeaponsDetailFragment : Fragment(R.layout.fragment_weapons_detail) {
 
     private fun dataSet(weaponsDetailData: List<WeaponsDetailData>) {
         binding.image.loadUrl(weaponsDetailData[0].displayIcon)
-        binding.desc.text = weaponsDetailData[0].displayName
-        binding.name.text = weaponsDetailData[0].assetPath
+        binding.desc.text = weaponsDetailData[0].category
+        binding.name.text = weaponsDetailData[0].displayName
         binding.imageView3.loadUrl(weaponsDetailData[0].killStreamIcon)
 
     }
 
     private fun setData() {
-
         viewModel.getWeaponsDetail(args.uuid)
+    }
+    private fun addFavorite(item:List<FavoritesDataModel>){
+        binding.addFavoriteWeapon.setOnClickListener {
+            viewModel.addFavoriteItem(item[0])
+        }
+    }
+    private fun toolBar(){
+        binding.customToolbar.setLayout(onItemClick = {
+        moveTo(com.serdar.navigation.R.id.action_weaponsDetailFragment_to_weaponsFragment)
+        }, "Weapons Detail")
     }
 }

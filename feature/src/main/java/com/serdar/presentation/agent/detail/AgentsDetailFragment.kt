@@ -7,9 +7,11 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.serdar.common.binding.viewBinding
 import com.serdar.common.extension.loadUrl
+import com.serdar.common.extension.statusBar
 import com.serdar.data.dto.favorite.FavoritesDataModel
 import com.serdar.presentation.R
 import com.serdar.presentation.databinding.FragmentAgentsDetailBinding
+import com.serdar.presentation.utility.moveTo
 import com.serdar.presentation.utility.toAgentsFavorite
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,7 +25,8 @@ class AgentsDetailFragment : Fragment(R.layout.fragment_agents_detail) {
         super.onViewCreated(view, savedInstanceState)
         agentsWithUuid()
         uiState()
-
+        statusBar("#1c252e")
+        toolBar()
     }
 
     private fun uiState() {
@@ -61,5 +64,10 @@ class AgentsDetailFragment : Fragment(R.layout.fragment_agents_detail) {
         binding.addFavorite.setOnClickListener {
             viewModel.addFavoriteItem(item[0])
         }
+    }
+    private fun toolBar(){
+        binding.customToolbar.setLayout(onItemClick = {
+            moveTo(com.serdar.navigation.R.id.action_agentsDetailFragment_to_agentsFragment)
+        }, "Agents Detail")
     }
 }

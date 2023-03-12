@@ -18,7 +18,9 @@
         android:label="SplashFragment" >
         <action
             android:id="@+id/actionToHome"
-            app:destination="@id/agentsFragment" />
+            app:destination="@id/agentsFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/weaponsFragment"

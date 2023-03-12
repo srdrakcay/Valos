@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.serdar.common.binding.viewBinding
+import com.serdar.common.extension.statusBar
 import com.serdar.presentation.R
 import com.serdar.presentation.databinding.FragmentMapsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,6 +22,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         uiState()
+        statusBar("#ff5252")
     }
 
     private fun uiState() {
