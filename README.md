@@ -1,11 +1,11 @@
 # Valos
 
-This is a e-commerce app for the TapuTeklif. The app has a Home Screen, Favorite Screen and Basket Screen. İn the app user can see all product, and adding favorite from the home screen. Last thing user can order the product in the Basket Screen
+This is a Valorant app with multi module. The app has Navigation, Feature, Data, Domain, Common, App and buildSrc for better gradle control.
 
 ## Project Screens
-SPLASH SCREEN | HOME SCREEN |  FAVORİTE SCREEN |   BASKET SCREEN |    APP SCREEN | 
+SPLASH SCREEN |AGENTS SCREEN |  WEAPONS SCREEN |   MAPS SCREEN |    FAVORİTE SCREEN | 
 --- | --- | --- | --- |  --- | 
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/jyazimp.png) |![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/iukpq9e.png) |![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/cb71hme.png)|![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/2cb176y.png)|![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/20sr7co.gif)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/pd8acte.png) |![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/qt4obr3.png) |![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/m7nhqa7.png)|![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/g27mkn5.png)|![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/dzwmq47.png)
 ## Project Tech stack & Open-source libraries
 
 - This app made %100 with  [Kotlin](https://developer.android.com/kotlin)
@@ -39,26 +39,32 @@ SPLASH SCREEN | HOME SCREEN |  FAVORİTE SCREEN |   BASKET SCREEN |    APP SCREE
 - This app uses [MVVM (Model View View-Model)](https://developer.android.com/topic/architecture#recommended-app-arch)architecture
 
                                    
-![Logo](https://i.hizliresim.com/iq3kqv1.png)
+![Logo](https://i.hizliresim.com/h8kd4u6.png)
 
-This project has 4 Main package ;
+This project has 7 Module ;
 
--DATA
+- App
 
--Dİ
+- buildSrc
 
--DOMAİN
+- Data
 
--Uİ
+- Domain
 
-### DATA LAYER
+- Feature
 
-![Logo](https://i.hizliresim.com/74vm745.jpg)
+- Navigation
+
+- Common
+
+### DATA MODULE
+
+![Logo](https://i.hizliresim.com/nwc3k8i.png)
 
 
   [Data Layer](https://developer.android.com/topic/architecture/data-layer): While the UI layer contains UI-related state and UI logic, the data layer contains application data and business logic. The business logic is what gives value to your app—it's made of real-world business rules that determine how application data must be created, stored, and changed.
   
-  inside the Data Layer:
+  inside the DATA Module:
   
   -- Repository
   
@@ -68,58 +74,86 @@ This project has 4 Main package ;
   
   -- Source
   
-  
-  ### DOMAİN LAYER
-  
-  ![Logo](https://i.hizliresim.com/l549eub.jpg)
-  
-   [Domain Layer](https://developer.android.com/topic/architecture/data-layer): The domain layer is responsible for encapsulating complex business logic, or simple business logic that is reused by multiple ViewModels. This layer is optional because not all apps will have these requirements. You should only use it when needed-for example, to handle complexity or favor reusability. 
-   
-   inside the Domain Layer:
+  -- DataStore
   
   -- Mapper
   
+  -- Di
+  
+  ### DOMAİN MODULE
+  
+  ![Logo](https://i.hizliresim.com/2rjsrvu.png)
+  
+   [Domain Layer](https://developer.android.com/topic/architecture/data-layer): The domain layer is responsible for encapsulating complex business logic, or simple business logic that is reused by multiple ViewModels. This layer is optional because not all apps will have these requirements. You should only use it when needed-for example, to handle complexity or favor reusability. 
+   
+   inside the DOMAİN Module:
+  
+  -- Di
+  
   -- UseCase
   
-  -- Entity
+ 
   
-   ### Uİ LAYER
+   ### FEATURE MODULE
 
-  ![Logo](https://i.hizliresim.com/49ic9x9.jpg)
+  ![Logo](https://i.hizliresim.com/ot2jcbj.png)
    
   
   [UI Layer](https://developer.android.com/topic/architecture/ui-layer): The role of the UI is to display the application data on the screen and also to serve as the primary point of user interaction. Whenever the data changes, either due to user interaction (like pressing a button) or external input (like a network response), the UI should update to reflect those changes. Effectively, the UI is a visual representation of the application state as retrieved from the data layer.
 
-   inside the Ui Layer:
+   inside the FEATURE Module:
   
   -- Fragments
   
   -- Components
   
-  -- Base
+  -- Di
   
-  -- Contract
+  -- Mapper
   
-  ## UI and Unit Testing
+  -- Utility
   
-  [Testing ](https://developer.android.com/training/testing/fundamentals) is an integral part of the app development process. By running tests against your app consistently, you can verify your app's correctness, functional behavior, and usability before you release it publicly.
+  ### COMMON MODULE
 
-You can manually test your app by navigating through it. You might use different devices and emulators, change the system language, and try to generate every user error or traverse every user flow.
+  ![Logo]( https://i.hizliresim.com/9q5sq7q.png)
+  
+   inside the COMMON Module:
+  
+  -- Fragments
+  
+  -- Components
+  
+  -- Di
+  
+  -- Mapper
+  
+  -- Utility
+  
+  ### NAVİGATİON MODULE
+
+  
+   inside the NAVİGATİON Module:
+  
+  -- NavGraph
+  
+  ### buildSrc MODULE
+
+  
+   inside the buildSrc Module:
+  
+  -- Dependency
+  
+  ### APP MODULE
+
+  
+   inside the APP Module:
+  
+  -- MainActivity
+  
+  -- Application Class
+  
+  
 
 
-
-  ![Logo](https://i.hizliresim.com/nux42m9.png)
-
-
- ## Test Summary
- - Api Service Test -> 5 Passed 1 Failed
- - ProductRepositoryImplTest -> 6 Passed 0 Failed
- - LocalDataSourceImplTest -> 12 Passed 0 Failed
- - RemoteDataSourceTest -> 2 Passed 2 Failed
- - AllProductUseCaseTest -> 3 Passed 0 Failed
- - PostOrderProductUseCaseTest -> 3 Passed 0 Failed
- - HomeUiMapperTest -> 5 Passed 1 Failed
- 
- ---> All Test Summarry : 37 Passed 4 Failed
  
  
