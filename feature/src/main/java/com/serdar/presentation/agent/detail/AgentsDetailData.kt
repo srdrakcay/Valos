@@ -1,6 +1,6 @@
 package com.serdar.presentation.agent.detail
 
-data class AgentsDetailData (
+data class AgentsDetailData(
     val assetPath: String,
     val background: String,
     val bustPortrait: String,
@@ -11,4 +11,5 @@ data class AgentsDetailData (
     val displayName: String,
     val fullPortrait: String,
     val fullPortraitV2: String,
+    val uuid: String
 )

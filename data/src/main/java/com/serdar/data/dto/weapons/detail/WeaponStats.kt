@@ -9,7 +9,7 @@ data class WeaponStats(
     val equipTimeSeconds: Double,
     val feature: String,
     val fireMode: Any,
-    val fireRate: Int,
+    val fireRate: Double,
     val firstBulletAccuracy: Double,
     val magazineSize: Int,
     val reloadTimeSeconds: Int,

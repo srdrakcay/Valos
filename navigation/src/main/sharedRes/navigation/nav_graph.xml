@@ -23,7 +23,11 @@
     <fragment
         android:id="@+id/weaponsFragment"
         android:name="com.serdar.presentation.weapon.WeaponsFragment"
-        android:label="WeaponsFragment" />
+        android:label="WeaponsFragment" >
+        <action
+            android:id="@+id/action_weaponsFragment_to_weaponsDetailFragment"
+            app:destination="@id/weaponsDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mapsFragment"
         android:name="com.serdar.presentation.map.MapsFragment"
@@ -58,6 +62,17 @@
         <action
             android:id="@+id/action_mapsDetailFragment_to_mapsFragment"
             app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weaponsDetailFragment"
+        android:name="com.serdar.presentation.weapon.detail.WeaponsDetailFragment"
+        android:label="WeaponsDetailFragment" >
+        <action
+            android:id="@+id/action_weaponsDetailFragment_to_weaponsFragment"
+            app:destination="@id/weaponsFragment" />
+        <argument
+            android:name="uuid"
+            app:argType="string" />
     </fragment>
 
 </navigation>

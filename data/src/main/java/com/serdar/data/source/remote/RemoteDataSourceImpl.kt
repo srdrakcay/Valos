@@ -2,13 +2,15 @@ package com.serdar.data.source.remote
 
 import com.serdar.data.NetworkResponseState
 import com.serdar.data.api.ValorantApiService
-import com.serdar.data.dto.agents.Data
+import com.serdar.data.dto.agents.Data as AgentsData
+import com.serdar.data.dto.weapons.Data as WeaponsData
+import com.serdar.data.dto.maps.Data as MapsData
 import javax.inject.Inject
 
 class RemoteDataSourceImpl @Inject constructor(
     private val valorantApi: ValorantApiService
 ) : RemoteDataSource {
-    override suspend fun getAgents(): NetworkResponseState<List<Data>> =
+    override suspend fun getAgents(): NetworkResponseState<List<AgentsData>> =
         try {
             val response = valorantApi.getAgents()
             NetworkResponseState.Success(response.data)
@@ -16,7 +18,7 @@ class RemoteDataSourceImpl @Inject constructor(
             NetworkResponseState.Error(e)
         }
 
-    override suspend fun getWeapons(): NetworkResponseState<List<com.serdar.data.dto.weapons.Data>>  =
+    override suspend fun getWeapons(): NetworkResponseState<List<WeaponsData>>  =
         try {
             val response = valorantApi.getWeapons()
             NetworkResponseState.Success(response.data)
@@ -24,7 +26,7 @@ class RemoteDataSourceImpl @Inject constructor(
             NetworkResponseState.Error(e)
         }
 
-    override suspend fun getMaps(): NetworkResponseState<List<com.serdar.data.dto.maps.Data>> =
+    override suspend fun getMaps(): NetworkResponseState<List<MapsData>> =
         try {
             val response = valorantApi.getMaps()
             NetworkResponseState.Success(response.data)

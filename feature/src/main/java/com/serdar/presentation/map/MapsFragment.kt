@@ -7,9 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.serdar.common.binding.viewBinding
 import com.serdar.presentation.R
-import com.serdar.presentation.agent.AgentsFragmentDirections
 import com.serdar.presentation.databinding.FragmentMapsBinding
-import com.serdar.presentation.map.detail.MapsDetailFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,7 +38,7 @@ class MapsFragment : Fragment(R.layout.fragment_maps) {
                 is MapsUiState.Success -> {
                     binding.rcView.adapter = mapsAdapter
                     mapsAdapter.updateData(it.data)
-                    mapsAdapter.onItemClick = {  data ->
+                    mapsAdapter.onItemClick = { data ->
                         val action =
                             MapsFragmentDirections.actionMapsFragmentToMapsDetailFragment(data)
                         findNavController().navigate(action)

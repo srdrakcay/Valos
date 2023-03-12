@@ -18,7 +18,8 @@ class AgentsDetailMapper @Inject constructor() :
                 it.bustPortrait,
                 it.displayIconSmall,
                 it.developerName,
-                it.displayIcon )
+                it.displayIcon,
+            it.uuid)
         } ?: emptyList()
     }
 }

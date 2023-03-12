@@ -8,7 +8,5 @@ data class Data(
     val displayName: String,
     val killStreamIcon: String,
     val shopData: ShopData,
-    val skins: List<Skin>,
     val uuid: String,
-    val weaponStats: WeaponStats
 )

@@ -11,4 +11,5 @@ data class ValorantAgentsDetailEntity (
     val displayName: String,
     val fullPortrait: String,
     val fullPortraitV2: String,
+    val uuid:String
 )

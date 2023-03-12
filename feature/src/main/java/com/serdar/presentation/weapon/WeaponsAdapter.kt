@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.serdar.common.extension.loadUrl
 import com.serdar.presentation.databinding.WeaponsItemBinding
 
-class WeaponsAdapter(private var weaponsUiData: List<WeaponsUiData>) :
+class WeaponsAdapter(private var weaponsUiData: List<WeaponsUiData>
+,var onItemClick: ((uuid:String) -> Unit)? = null) :
     RecyclerView.Adapter<WeaponsAdapter.MyViewHolder>() {
 
 
@@ -30,6 +31,9 @@ class WeaponsAdapter(private var weaponsUiData: List<WeaponsUiData>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bindItems(weaponsUiData[position])
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(weaponsUiData[position].uuid)
+        }
 
     }
 

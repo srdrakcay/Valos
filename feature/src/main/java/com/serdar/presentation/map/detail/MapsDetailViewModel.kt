@@ -7,6 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.serdar.common.entity.ValorantMapsDetailEntity
 import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.NetworkResponseState
+import com.serdar.data.dto.favorite.FavoritesDataModel
+import com.serdar.domain.usecase.agentsusecase.agentsdetailusecase.AgentsDetailUseCase
+import com.serdar.domain.usecase.favoritesusecase.additemusecase.AddItemFavoriteUseCase
 import com.serdar.domain.usecase.mapsusecase.mapsdetailusecase.MapsDetailUseCase
 import com.serdar.presentation.R
 import com.serdar.presentation.agent.detail.AgentsDetailState
@@ -18,6 +21,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MapsDetailViewModel @Inject constructor(
     private val mapsDetailUseCase: MapsDetailUseCase,
+    private val addItemFavoriteUseCase: AddItemFavoriteUseCase,
     private val valorantUiDetailMapper: ValorantListMapper<ValorantMapsDetailEntity, MapsDetailData>,
 ) : ViewModel() {
 
@@ -41,6 +45,12 @@ class MapsDetailViewModel @Inject constructor(
                     }
                 }
             }
+        }
+    }
+
+    fun addFavoriteItem(item: FavoritesDataModel) {
+        viewModelScope.launch {
+            addItemFavoriteUseCase(item)
         }
     }
 }

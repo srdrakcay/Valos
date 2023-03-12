@@ -8,6 +8,7 @@ import com.serdar.common.entity.ValorantAgentsDetailEntity
 import com.serdar.common.entity.ValorantAgentsEntity
 import com.serdar.common.mapper.ValorantListMapper
 import com.serdar.data.NetworkResponseState
+import com.serdar.data.dto.favorite.FavoritesDataModel
 import com.serdar.domain.usecase.agentsusecase.agentsdetailusecase.AgentsDetailUseCase
 import com.serdar.domain.usecase.agentsusecase.getagentsusecase.GetAgentsUseCase
 import com.serdar.domain.usecase.favoritesusecase.additemusecase.AddItemFavoriteUseCase
@@ -23,6 +24,7 @@ import javax.inject.Inject
 class AgentsDetailViewModel@Inject constructor(
     private val agentsDetailUseCase: AgentsDetailUseCase,
     private val valorantUiDetailMapper: ValorantListMapper<ValorantAgentsDetailEntity, AgentsDetailData>,
+    private val addItemFavoriteUseCase: AddItemFavoriteUseCase
 )  : ViewModel() {
 
 
@@ -40,11 +42,16 @@ class AgentsDetailViewModel@Inject constructor(
                         _valorantAgentsDetailUiState.postValue(AgentsDetailState.Loading)
                     }
                     is NetworkResponseState.Success -> {
-                        _valorantAgentsDetailUiState.postValue(AgentsDetailState.Success(valorantUiDetailMapper.map(it.result)))
+                        _valorantAgentsDetailUiState.postValue(AgentsDetailState.Success(
+                            valorantUiDetailMapper.map(it.result)))
                     }
                 }
             }
         }
     }
-
+    fun addFavoriteItem(item: FavoritesDataModel) {
+        viewModelScope.launch {
+            addItemFavoriteUseCase(item)
+        }
+    }
 }

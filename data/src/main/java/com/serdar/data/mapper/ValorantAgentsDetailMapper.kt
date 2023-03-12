@@ -19,7 +19,8 @@ class ValorantAgentsDetailMapper @Inject constructor() :
                 description = it.description,
                 developerName = it.developerName,
                 displayIcon = it.displayIcon,
-                displayIconSmall = it.displayIconSmall
+                displayIconSmall = it.displayIconSmall,
+                uuid = it.uuid
             )
         } ?: emptyList()
     }

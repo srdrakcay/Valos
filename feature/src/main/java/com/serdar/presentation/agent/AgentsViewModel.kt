@@ -20,7 +20,6 @@ import javax.inject.Inject
 @HiltViewModel
 class AgentsViewModel @Inject constructor(
     private val getAgentsUseCase: GetAgentsUseCase,
-    private val addItemFavoriteUseCase: AddItemFavoriteUseCase,
     private val valorantUiMapper: ValorantListMapper<ValorantAgentsEntity, AgentsUiData>,
 ) : ViewModel() {
 
@@ -49,11 +48,4 @@ class AgentsViewModel @Inject constructor(
         }
     }
 
-    fun addFavoriteItem(item: FavoritesDataModel) {
-        viewModelScope.launch {
-            addItemFavoriteUseCase(item)
-
-
-        }
-    }
 }

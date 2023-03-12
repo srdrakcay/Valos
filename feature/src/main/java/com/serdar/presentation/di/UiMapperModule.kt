@@ -12,6 +12,8 @@ import com.serdar.presentation.map.detail.MapsDetailData
 import com.serdar.presentation.map.detail.MapsDetailMapper
 import com.serdar.presentation.weapon.WeaponsUiData
 import com.serdar.presentation.weapon.WeaponsUiMapper
+import com.serdar.presentation.weapon.detail.WeaponsDetailData
+import com.serdar.presentation.weapon.detail.WeaponsDetailMapper
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -40,5 +42,9 @@ abstract class UiMapperModule {
     @Binds
     @ViewModelScoped
     abstract fun valorantMapsDetailMapper(mapsDetailMapper: MapsDetailMapper): ValorantListMapper<ValorantMapsDetailEntity, MapsDetailData>
+
+    @Binds
+    @ViewModelScoped
+    abstract fun valorantWeaponsDetailMapper(weaponsDetailMapper: WeaponsDetailMapper): ValorantListMapper<ValorantWeaponsDetailEntity, WeaponsDetailData>
 
 }
